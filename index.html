@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/index.css" rel="stylesheet">
+        <script src="js/index.js" defer></script>
+        <script type="module"
+            src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <script nomodule
+            src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    </head>
+    <body>
+        <canvas id="starsCanvas"></canvas>
+        <div class="space-bg">
+                <div class="glow"></div>
+                <div class="stars"></div>
+            </div>
+            <model-viewer
+                style="width: 100vw; height: 100vh;"
+                id="laptop"
+                src="assets\models\laptop.glb"
+                alt="Laptop 3D model"
+                camera-controls>
+            </model-viewer>
+            <a class="redirect-btn" id="goBtn" href="sesion.html">Iniciar</a>
+            <div id="transition" class="transition"></div>
+            
+    </body>
+</html>

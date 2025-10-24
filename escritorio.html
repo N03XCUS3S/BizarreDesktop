@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Escritorio</title>
+        <link rel="stylesheet" href="css/escritorio.css">
+        <script src="js/escritorio.js" defer></script>
+    </head>
+    <body>
+        <!--Escritorio con cada icono dentro-->
+        <div class="desktop">
+            <div class="desktop-icons">
+                <div class="desktop-icon" id="icon-phantom-blood">
+                    <img src="assets/imgs/phantomBlood.png"
+                        alt="Phantom Blood">
+                    Phantom Blood
+                </div>
+                <div class="desktop-icon" id="icon-battle-tendency">
+                    <img src="assets/imgs/battleTendecy.png"
+                        alt="Battle Tendency">
+                    Battle Tendency
+                </div>
+                <div class="desktop-icon" id="icon-stardust-crusaders">
+                    <img src="assets/imgs/stardustCrusaders.png"
+                        alt="Stardust Crusaders">
+                    Stardust Crusaders
+                </div>
+                <div class="desktop-icon" id="icon-diamond-is-unbreakable">
+                    <img src="assets/imgs/crazyDiamond.png"
+                        alt="Diamond Is Unbreakable">
+                    Diamond Is Unbreakable
+                </div>
+                <div class="desktop-icon" id="icon-golden-wind">
+                    <img src="assets/imgs/goldenWind.png" alt="Golden Wind">
+                    Golden Wind
+                </div>
+                <div class="desktop-icon" id="icon-stone-ocean">
+                    <img src="assets/imgs/stoneOcean.png" alt="Stone Ocean">
+                    Stone Ocean
+                </div>
+                <div class="desktop-icon" id="icon-steel-ball-run">
+                    <img src="assets/imgs/steelBall.png"
+                        alt="Steel Ball Run">
+                    Steel Ball Run
+                </div>
+                <div class="desktop-icon" id="icon-jojolion">
+                    <img src="assets/imgs/jojolion.png" alt="JoJolion">
+                    JoJolion
+                </div>
+                <div class="desktop-icon" id="icon-the-jojolands">
+                    <img src="assets/imgs/jojolands.png" alt="The JoJoLands">
+                    The JoJoLands
+                </div>
+            </div>
+
+            <!-- barra de tareas -->
+            <div class="taskbar">
+                <div class="taskbar-icon" title="User" id="taskbarUser">
+                    <img src="assets/imgs/UserIcon.png" alt="User"
+                        style="width:32px;">
+                </div>
+                <div id="userLabel" class="user-label"></div>
+
+                <div class="taskbar-icon" title="Musica">
+                    <img src="assets/imgs/music.png" alt="musica"
+                        style="width:32px;">
+                </div>
+                <div class="taskbar-icon" title="Salir">
+                    <a><img src="assets/imgs/power.png" alt="Salir"
+                            style="width:32px;"></a>
+                </div>
+            </div>
+        </div>
+        <!--ventanas de cada "aplicaion"-->
+        <div id="window-phantom-blood" class="window hidden">
+            <div class="window-header">
+                Phantom Blood
+                <button class="window-close"
+                    onclick="closeWindow('window-phantom-blood')">×</button>
+            </div>
+            <div class="window-content">
+                <p>Información sobre Phantom Blood.</p>
+            </div>
+        </div>
+        <div id="window-battle-tendency" class="window hidden">
+            <div class="window-header">
+                Battle Tendency
+                <button class="window-close"
+                    onclick="closeWindow('window-battle-tendency')">×</button>
+            </div>
+            <div class="window-content">
+                <p>Información sobre Battle Tendency.</p>
+            </div>
+        </div>
+        <div id="window-stardust-crusaders" class="window hidden">
+            <div class="window-header">
+                Stardust Crusaders
+                <button class="window-close"
+                    onclick="closeWindow('window-stardust-crusaders')">×</button>
+            </div>
+            <div class="window-content">
+                <p>Información sobre Stardust Crusaders.</p>
+            </div>
+        </div>
+        <div id="window-diamond-is-unbreakable" class="window hidden">
+            <div class="window-header">
+                Diamond Is Unbreakable
+                <button class="window-close"
+                    onclick="closeWindow('window-diamond-is-unbreakable')">×</button>
+            </div>
+            <div class="window-content">
+                <p>Información sobre Diamond Is Unbreakable.</p>
+            </div>
+        </div>
+        <div id="window-golden-wind" class="window hidden">
+            <div class="window-header">
+                Golden Wind
+                <button class="window-close"
+                    onclick="closeWindow('window-golden-wind')">×</button>
+            </div>
+            <div class="window-content">
+                <p>Información sobre Golden Wind.</p>
+            </div>
+        </div>
+        <div id="window-stone-ocean" class="window hidden">
+            <div class="window-header">
+                Stone Ocean
+                <button class="window-close"
+                    onclick="closeWindow('window-stone-ocean')">×</button>
+            </div>
+            <div class="window-content">
+                <p>Información sobre Stone Ocean.</p>
+            </div>
+        </div>
+        <div id="window-steel-ball-run" class="window hidden">
+            <div class="window-header">
+                Steel Ball Run
+                <button class="window-close"
+                    onclick="closeWindow('window-steel-ball-run')">×</button>
+            </div>
+            <div class="window-content">
+                <p>Información sobre Steel Ball Run.</p>
+            </div>
+        </div>
+        <div id="window-jojolion" class="window hidden">
+            <div class="window-header">
+                JoJolion
+                <button class="window-close"
+                    onclick="closeWindow('window-jojolion')">×</button>
+            </div>
+            <div class="window-content">
+                <p>Información sobre JoJolion.</p>
+            </div>
+        </div>
+        <div id="window-the-jojolands" class="window hidden">
+            <div class="window-header">
+                The JoJoLands
+                <button class="window-close"
+                    onclick="closeWindow('window-the-jojolands')">×</button>
+            </div>
+            <div class="window-content">
+                <p>Información sobre The JoJoLands.</p>
+            </div>
+        </div>
+
+    </body>
+</html>

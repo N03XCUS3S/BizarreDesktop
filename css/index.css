@@ -1,0 +1,111 @@
+/* Fondo cósmico con resplandor central y estrellas */
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Segoe UI', Verdana, sans-serif;
+    background: radial-gradient(ellipse at 50% 50%, #7a64b7 0%, #070707 100%);
+}
+#starsCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* para que quede en fondo */
+}
+
+.space-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, #7a64b7 0%, #eb5694 40%, transparent 70%);
+    opacity: 0.5;
+    filter: blur(40px);
+    z-index: 1;
+}
+
+.stars {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 2;
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    opacity: 0.8;
+    animation: twinkle 2s infinite alternate, moveStar 3s linear infinite;
+    box-shadow: 0 0 2px 1px #fff, 0 0 3px 2px #7a64b7;
+}
+
+/* Animación para mover estrellas lentamente */
+@keyframes moveStar {
+    from { transform: translateY(0); }
+    to { transform: translateY(50px); }
+}
+
+@keyframes twinkle {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+/* Botón y transición */
+.redirect-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    width: 200px;
+    height: 170px;
+    background: transparent;
+    color: transparent;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    z-index: 15;
+    box-shadow: none;
+    transition: none;
+    font-size: 1rem;
+    opacity: 0;
+    pointer-events: auto; /* Permite hacer clic */
+}
+
+model-viewer {
+    transition: transform 0.8s ease-in-out;
+    z-index: 12;
+    position: relative;
+}
+
+model-viewer.zoom-in {
+    transform: scale(14) translateY(10vh);
+}
+
+.transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(7, 7, 7, 0.8);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 100;
+}
+.transition.active {
+    pointer-events: auto;
+    opacity: 1;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Iniciar sesión</title>
+        <link rel="stylesheet" href="css/sesion.css">
+        <script src="js/sesion.js" defer></script>
+    </head>
+    <body>
+        <div class="login-screen">
+            <header class="ls-header">
+                <h1>Bienvenido</h1>
+                <p>Seleccione su usuario o cree uno nuevo</p>
+            </header>
+
+            <main class="ls-main">
+                <section class="profiles" id="profilesContainer">
+                    <!-- Perfiles renderizados por JS -->
+                </section>
+
+                <aside class="controls">
+                    <button id="createBtn" class="btn primary">Crear
+                        perfil</button>
+                    <button id="guestBtn" class="btn ghost">Entrar como
+                        invitado</button>
+                    <p class="hint">Perfiles guardados localmente en este
+                        navegador.</p>
+                </aside>
+            </main>
+        </div>
+
+        <!-- Modal crear perfil simple -->
+        <div id="createModal" class="modal hidden">
+            <div class="modal-card">
+                <h2>Crear perfil</h2>
+                <label>
+                    Nombre de usuario
+                    <input id="newUsername" type="text" placeholder="ej. pepito"
+                        maxlength="24">
+                </label>
+                <label>
+                    Inicial (opcional)
+                    <input id="newInitial" type="text" maxlength="1"
+                        placeholder="P">
+                </label>
+                <div class="modal-actions">
+                    <button id="saveProfile" class="btn primary">Crear</button>
+                    <button id="cancelCreate"
+                        class="btn ghost">Cancelar</button>
+                </div>
+                <p id="createError" class="error"></p>
+            </div>
+        </div>
+    </body>
+</html>
