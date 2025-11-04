@@ -4,16 +4,17 @@ const SESSION_KEY = 'jojos_session';
 
 // Perfiles estáticos (modificables en memoria)
 let staticUsers = {
-    'Usuario1': { initial: 'U', color: 'linear-gradient(135deg,#ffffff,#cfefff)' },
-    'Usuario2': { initial: 'V', color: 'linear-gradient(135deg,#ffffff,#cfefff)' }
+    'Guest': { initial: 'G', password: '', color: 'linear-gradient(135deg,#fbe1ad,#7a64b7)' }
 };
 
+// elementos DOM para añadir a la interfaz
 const profilesContainer = document.getElementById('profilesContainer');
 const createBtn = document.getElementById('createBtn');
 const guestBtn = document.getElementById('guestBtn');
 
 const createModal = document.getElementById('createModal');
 const newUsername = document.getElementById('newUsername');
+const newPassword = document.getElementById('newPassword');
 const newInitial = document.getElementById('newInitial');
 const saveProfile = document.getElementById('saveProfile');
 const createError = document.getElementById('createError');
@@ -31,16 +32,44 @@ function renderProfiles(){
             <div class="avatar" style="background:${u.color||'#dfe'}">${u.initial || name.charAt(0).toUpperCase()}</div>
             <div class="username">${name}</div>
         `;
-        card.addEventListener('click', () => loginUser(name));
+        card.addEventListener('click', () => openPassw(name));
         profilesContainer.appendChild(card);
     });
 }
 
-function loginUser(name){
+const passwModal = document.getElementById('passwModal');
+const loginPassword = document.getElementById('loginPassword');
+const loginError = document.getElementById('loginError');
+const loginBtn = document.getElementById('loginBtn');
+let currentLoginUser = null;
+
+function openPassw(name){
+    currentLoginUser = name;
+    loginError.textContent = '';
+    loginPassword.value = '';
+    passwModal.classList.remove('invisible');
+    loginPassword.focus();
+}
+
+function closePassw(){
+    passwModal.classList.add('invisible');
+}
+
+function loginUser(){
+    const name = currentLoginUser;
+    const passw = loginPassword.value;
+    const user = staticUsers[name];
+
+    if (!user || user.password !== passw) {
+        loginError.textContent = 'Contraseña incorrecta.';
+        return;
+    }
+    
     const session = { user: name, guest: false };
     sessionStorage.setItem(SESSION_KEY, JSON.stringify(session));
     proceedToDesktop();
 }
+
 
 function guestLogin(){
     const session = { user: 'Invitado', guest: true };
@@ -51,6 +80,7 @@ function guestLogin(){
 function openCreate(){
     createError.textContent = '';
     newUsername.value = '';
+    newPassword.value = '';
     newInitial.value = '';
     createModal.classList.remove('hidden');
     newUsername.focus();
@@ -62,20 +92,25 @@ function closeCreate(){
 }
 
 function createProfileHandler(){
+    // validaciones simples para contraseña y nombre 
     const name = (newUsername.value || '').trim();
-    if(!name){
-        createError.textContent = 'Introduce un nombre de usuario.';
+    const passw = (newPassword.value || '').trim();
+    if(!name || !passw){
+        createError.textContent = 'Falta nombre o contraseña.';
         return;
     }
     if(staticUsers[name]){
         createError.textContent = 'Ese nombre ya existe.';
         return;
     }
+
     const init = (newInitial.value || name.charAt(0) || '').toUpperCase();
+
+    // Guardar la contraseña en el objeto de usuario
     // color aleatorio pastel
     const hue = Math.floor(Math.random()*360);
     const color = `linear-gradient(135deg,hsl(${hue} 70% 85%), hsl(${(hue+30)%360} 80% 75%))`;
-    staticUsers[name] = { initial: init, color };
+    staticUsers[name] = { initial: init, password: passw, color };
     renderProfiles();
     closeCreate();
 }
@@ -90,10 +125,14 @@ function proceedToDesktop(){
 // eventos
 createBtn.addEventListener('click', openCreate);
 guestBtn.addEventListener('click', guestLogin);
+loginBtn.addEventListener('click', loginUser);
 
 // cerrar modal
 const cancelCreate = document.getElementById('cancelCreate');
 if(cancelCreate) cancelCreate.addEventListener('click', closeCreate);
+
+const cancelLogin = document.getElementById('cancelLogin');
+if(cancelLogin) cancelLogin.addEventListener('click', closePassw);
 
 // cerrar modal con ESC
 window.addEventListener('keydown', (e)=>{
@@ -102,6 +141,10 @@ window.addEventListener('keydown', (e)=>{
 
 // guardar perfil
 if(saveProfile) saveProfile.addEventListener('click', createProfileHandler);
+loginPassword.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') loginUser();
+});
+
 
 // init
 (function init(){
