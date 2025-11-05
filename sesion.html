@@ -20,12 +20,8 @@
                 </section>
 
                 <aside class="controls">
-                    <button id="createBtn" class="btn primary">Crear
-                        perfil</button>
-                    <button id="guestBtn" class="btn ghost">Entrar como
-                        invitado</button>
-                    <p class="hint">Perfiles guardados localmente en este
-                        navegador.</p>
+                    <button id="createBtn" class="btn primary">Crear perfil</button>
+                    <button id="guestBtn" class="btn ghost">Invitado</button>
                 </aside>
             </main>
         </div>
@@ -36,13 +32,15 @@
                 <h2>Crear perfil</h2>
                 <label>
                     Nombre de usuario
-                    <input id="newUsername" type="text" placeholder="ej. pepito"
-                        maxlength="24">
+                    <input id="newUsername" type="text" placeholder="ej. pepito" maxlength="24" required>
+                </label>
+                <label>
+                    Contraseña
+                    <input id="newPassword" type="text" maxlength="32" placeholder="passw" required>
                 </label>
                 <label>
                     Inicial (opcional)
-                    <input id="newInitial" type="text" maxlength="1"
-                        placeholder="P">
+                    <input id="newInitial" type="text" maxlength="1" placeholder="P">
                 </label>
                 <div class="modal-actions">
                     <button id="saveProfile" class="btn primary">Crear</button>
@@ -50,6 +48,20 @@
                         class="btn ghost">Cancelar</button>
                 </div>
                 <p id="createError" class="error"></p>
+            </div>
+        </div>
+        <div id="passwModal" class="modal invisible">
+            <div class="modal-card">
+                <h2>Iniciar sesión</h2>
+                <label>
+                    Contraseña
+                    <input id="loginPassword" type="password" maxlength="32" placeholder="Contraseña" required>
+                </label>
+                <div class="pass-actions">
+                    <button id="loginBtn" class="btn primary">Entrar</button>
+                    <button id="cancelLogin" class="btn ghost">Cancelar</button>
+                </div>
+                <p id="loginError" class="error"></p>
             </div>
         </div>
     </body>
