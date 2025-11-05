@@ -67,6 +67,9 @@ body {
     font-size: 1.3rem;
     text-align: center;
     color: #eb5694;
+    background: rgba(7, 7, 7, 0.8);
+    padding: 0.1rem 0.25rem;
+    border-radius: 16px;
     text-shadow:2px 2px 8px #7a64b7,
                 2px 2px 1px #000,
                 2px 2px 2px #fff;
@@ -94,7 +97,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(7,7,7,0.53);
     z-index: 100;
-    animation: windowIn 0.4s;
+    animation: windowIn 0.1s;
     display: flex;
     flex-direction: column;
     resize: both;
@@ -181,21 +184,20 @@ body {
 body,
 .desktop,
 .taskbar {
-    cursor: url('../assets/cursores/toBeContinued.png'), auto;
-} 
+    cursor: url('../assets/cursores/toBeContinued.png') 64 64, auto;
+}
 
 .desktop-icon,
 .taskbar-icon,
 .window-control,
 .window-close,
 .taskbar-icon {
-    cursor: url('../assets/cursores/jotaroPointer.png'), pointer;
+    cursor: url('../assets/cursores/jotaroPointer.png') 64 64, pointer;
 }
 
 .window-header:active {
-    cursor: url('../assets/cursores/jotaroCursor.png'), grabbing;
+    cursor: url('../assets/cursores/jotaroCursor.png') 64 64, grabbing;
 }
-
 
 
 /* Responsive: barra de tareas abajo y ventanas centradas en móvil */
