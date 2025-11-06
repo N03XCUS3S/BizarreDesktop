@@ -87,9 +87,7 @@ body {
   justify-content: center;
   padding: 32px;
 }
-.ls-header {
-  position: absolute;
-  top: 20vh; 
+.ls-header { 
   text-align: center;
 
 }
@@ -110,18 +108,17 @@ body {
 @keyframes colorCycle {
   0% { color: #e91e63; } /* Pink */
   33% { color: #9c27b0; } /* Purple */
-  66% { color: #d48c05; } /* Yellow */
+  66% { color: #9c27b0; } /* Purple */
   100% { color: #e91e63; } /* Back to pink */
 }
 
 @keyframes modalGlow {
-  0% { box-shadow: 0 30px 80px rgba(2, 6, 23, 0.6), 0 0 20px #e91e63, 0 0 40px #e91e63; }
+  0% { box-shadow: 0 30px 80px rgba(2, 6, 23, 0.6), 0 0 20px #000000, 0 0 40px #000000; }
+  50% { box-shadow: 0 30px 80px rgba(2, 6, 23, 0.6), 0 0 30px #821136, 0 0 60px #821136; }
   100% { box-shadow: 0 30px 80px rgba(2, 6, 23, 0.6), 0 0 30px #e91e63, 0 0 60px #e91e63; }
 }
 
 .ls-main {
-  position: relative;
-  top: 8vh;
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -138,10 +135,11 @@ body {
   padding: 18px;
   border-radius: 12px;
   justify-content: center;
+  align-items: center;
   min-height: 220px;
 }
 .profile {
-  width: 140px;
+  width: 160px;
   height: 160px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), );
   border-radius: 10px;
@@ -153,7 +151,7 @@ body {
   cursor: pointer;
   user-select: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: 2px 6px 18px rgba(2, 6, 23, 0.6);
+  border-radius: 40%;
 }
 
 .profile:hover {
@@ -161,27 +159,18 @@ body {
   box-shadow: 0 18px 34px rgba(2, 6, 23, 0.6);
 }
 .avatar {
-  width:100px;
-  height: 100px;
+  width:120px;
+  height: 120px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 28px;
-  color: #042;
-  background: linear-gradient(135deg, #ffd700, #ffeb3b, #ffffff); /* Gold to yellow to white for JoJo flair */
+  font-size: 20px;
+  color: #f9f3ba;
+  text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 30px #ffeb3b; 
   margin-bottom: 10px;
   overflow: hidden;
-}
-.username {
-  font-size: 1rem;
-  letter-spacing: 1px;
-  color: var(--muted );
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 15px #0a0a0a, 0 0 25px #ffeb3b, 0 0 35px #ffeb3b;
-  word-break: break-word;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 /* controls aside */
@@ -215,8 +204,15 @@ body {
   background: #ba68c8; /* Lighter purple */
   color: #e6eef6;
   border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
-
+.btn.ghost img{
+  width: 24px;
+  height: 24px;
+}
 /* Modal buttons - separated from ls-main buttons */
 .modal .btn {
   width: 100px;
@@ -252,7 +248,7 @@ body {
   padding: 18px;
   border-radius: 12px;
   box-shadow: 0 30px 80px rgba(2, 6, 23, 0.6), 0 0 20px #e91e63, 0 0 40px #e91e63; /* Neon pink glow */
-  animation: modalGlow 2s ease-in-out infinite alternate; /* Add pulsing glow */
+  animation: modalGlow 2s linear infinite alternate; /* Add pulsing glow */
 }
 .modal-card h2 {
   margin: 0 0 10px;

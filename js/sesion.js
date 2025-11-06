@@ -2,9 +2,34 @@
 // Gestión simple de perfiles estáticos y navegación a escritorio.html
 const SESSION_KEY = 'jojos_session';
 
+function randomColor() {
+    const hue = Math.floor(Math.random() * (320 - 270 + 1)) + 270;
+    const nextHue = (hue + 20) % 360;
+
+    const gradientTypes = ['linear', 'radial', 'conic'];
+    const chosenType = gradientTypes[Math.floor(Math.random() * gradientTypes.length)];
+
+    const saturation1 = 85;
+    const saturation2 = 90;
+    const lightness1 = 40;
+    const lightness2 = 30;
+
+    switch (chosenType) {
+        case 'linear':
+            const angle = Math.floor(Math.random() * 360);
+            return `linear-gradient(${angle}deg, hsl(${hue} ${saturation1}% ${lightness1}%), hsl(${nextHue} ${saturation2}% ${lightness2}%))`;
+
+        case 'radial':
+            return `radial-gradient(circle at center, hsl(${hue} ${saturation1}% ${lightness1}%), hsl(${nextHue} ${saturation2}% ${lightness2}%))`;
+
+        case 'conic':
+            return `conic-gradient(from 0deg at center, hsl(${hue} 85% 40%) 0deg, hsl(${(hue + 10) % 360} 80% 45%) 72deg,hsl(${(hue + 20) % 360} 85% 35%) 144deg,hsl(${(hue + 30) % 360} 80% 50%) 216deg,hsl(${(hue + 40) % 360} 90% 38%) 288deg,hsl(${hue} 85% 40%) 360deg`
+    }
+}
+
 // Perfiles estáticos (modificables en memoria)
 let staticUsers = {
-    'Guest': { initial: 'G', password: '', color: 'linear-gradient(135deg,#fbe1ad,#7a64b7)' }
+    'Guest': { password: '', color: randomColor() }
 };
 
 // elementos DOM para añadir a la interfaz
@@ -15,7 +40,7 @@ const guestBtn = document.getElementById('guestBtn');
 const createModal = document.getElementById('createModal');
 const newUsername = document.getElementById('newUsername');
 const newPassword = document.getElementById('newPassword');
-const newInitial = document.getElementById('newInitial');
+
 const saveProfile = document.getElementById('saveProfile');
 const createError = document.getElementById('createError');
 
@@ -29,8 +54,7 @@ function renderProfiles(){
         card.className = 'profile';
         card.title = name;
         card.innerHTML = `
-            <div class="avatar" style="background:${u.color||'#dfe'}">${u.initial || name.charAt(0).toUpperCase()}</div>
-            <div class="username">${name}</div>
+            <div class="avatar" style="background:${u.color||'#dfe'}">${name}</div>
         `;
         card.addEventListener('click', () => openPassw(name));
         profilesContainer.appendChild(card);
@@ -81,7 +105,6 @@ function openCreate(){
     createError.textContent = '';
     newUsername.value = '';
     newPassword.value = '';
-    newInitial.value = '';
     createModal.classList.remove('hidden');
     newUsername.focus();
 }
@@ -93,7 +116,7 @@ function closeCreate(){
 
 function createProfileHandler(){
     // validaciones simples para contraseña y nombre 
-    const name = (newUsername.value || '').trim();
+    const name = (newUsername.value || '').trim().replace(" ","-");
     const passw = (newPassword.value || '').trim();
     if(!name || !passw){
         createError.textContent = 'Falta nombre o contraseña.';
@@ -104,16 +127,14 @@ function createProfileHandler(){
         return;
     }
 
-    const init = (newInitial.value || name.charAt(0) || '').toUpperCase();
-
     // Guardar la contraseña en el objeto de usuario
-    // color aleatorio pastel
-    const hue = Math.floor(Math.random()*360);
-    const color = `linear-gradient(135deg,hsl(${hue} 70% 85%), hsl(${(hue+30)%360} 80% 75%))`;
-    staticUsers[name] = { initial: init, password: passw, color };
+    // color aleatorio
+    const color = randomColor();
+    staticUsers[name] = { password: passw, color };
     renderProfiles();
     closeCreate();
 }
+
 
 function proceedToDesktop(){
     // breve transición visual opcional (puedes adaptar)

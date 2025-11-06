@@ -9,19 +9,21 @@
     </head>
     <body>
         <div class="login-screen">
-            <header class="ls-header">
-                <h1>Bienvenido</h1>
-                <p>Seleccione su usuario o cree uno nuevo</p>
-            </header>
-
             <main class="ls-main">
+
+                <header class="ls-header">
+                    <h1>Bienvenido</h1>
+                    <p>Seleccione su usuario o cree uno nuevo</p>
+                </header>
+
                 <section class="profiles" id="profilesContainer">
                     <!-- Perfiles renderizados por JS -->
                 </section>
 
                 <aside class="controls">
-                    <button id="createBtn" class="btn primary">Crear perfil</button>
-                    <button id="guestBtn" class="btn ghost">Invitado</button>
+                    <button id="createBtn" class="btn primary">Crear
+                        perfil</button>
+                    <button id="guestBtn" class="btn ghost"><img src="assets/imgs/UserIcon.png"></img>Invitado</button>
                 </aside>
             </main>
         </div>
@@ -32,15 +34,13 @@
                 <h2>Crear perfil</h2>
                 <label>
                     Nombre de usuario
-                    <input id="newUsername" type="text" placeholder="ej. pepito" maxlength="24" required>
+                    <input id="newUsername" type="text" placeholder="ej. pepito"
+                        maxlength="24" required>
                 </label>
                 <label>
                     Contraseña
-                    <input id="newPassword" type="text" maxlength="32" placeholder="passw" required>
-                </label>
-                <label>
-                    Inicial (opcional)
-                    <input id="newInitial" type="text" maxlength="1" placeholder="P">
+                    <input id="newPassword" type="text" maxlength="32"
+                        placeholder="passw" required>
                 </label>
                 <div class="modal-actions">
                     <button id="saveProfile" class="btn primary">Crear</button>
@@ -50,12 +50,14 @@
                 <p id="createError" class="error"></p>
             </div>
         </div>
+        <!--Modal para pedir contraseña de usuario-->
         <div id="passwModal" class="modal invisible">
             <div class="modal-card">
                 <h2>Iniciar sesión</h2>
                 <label>
                     Contraseña
-                    <input id="loginPassword" type="password" maxlength="32" placeholder="Contraseña" required>
+                    <input id="loginPassword" type="password" maxlength="32"
+                        placeholder="Contraseña" required>
                 </label>
                 <div class="pass-actions">
                     <button id="loginBtn" class="btn primary">Entrar</button>
