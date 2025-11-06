@@ -27,13 +27,31 @@ function randomColor() {
     }
 }
 
-// Perfiles estáticos (modificables en memoria)
-let staticUsers = {
-    'Guest': { password: '', color: randomColor() }
-};
+// Perfiles persistentes en localStorage
+const USERS_KEY = 'jojos_users';
+
+function loadUsers() {
+    const stored = localStorage.getItem(USERS_KEY);
+    if (stored) {
+        return JSON.parse(stored);
+    } else {
+        return {
+            'Guest': { password: '', color: randomColor() }
+        };
+    }
+}
+
+function saveUsers() {
+    localStorage.setItem(USERS_KEY, JSON.stringify(staticUsers));
+}
+
+let staticUsers = loadUsers();
 
 // elementos DOM para añadir a la interfaz
 const profilesContainer = document.getElementById('profilesContainer');
+const profilesList = document.getElementById('profilesList');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
 const createBtn = document.getElementById('createBtn');
 const guestBtn = document.getElementById('guestBtn');
 
@@ -44,11 +62,19 @@ const newPassword = document.getElementById('newPassword');
 const saveProfile = document.getElementById('saveProfile');
 const createError = document.getElementById('createError');
 
+let currentIndex = 0;
+const profilesPerPage = 5;
+
 function renderProfiles(){
     const users = staticUsers;
-    profilesContainer.innerHTML = '';
     const keys = Object.keys(users);
-    keys.forEach(name => {
+    const totalProfiles = keys.length;
+    const start = currentIndex;
+    const end = Math.min(start + profilesPerPage, totalProfiles);
+    const visibleKeys = keys.slice(start, end);
+
+    profilesList.innerHTML = '';
+    visibleKeys.forEach(name => {
         const u = users[name];
         const card = document.createElement('div');
         card.className = 'profile';
@@ -57,8 +83,12 @@ function renderProfiles(){
             <div class="avatar" style="background:${u.color||'#dfe'}">${name}</div>
         `;
         card.addEventListener('click', () => openPassw(name));
-        profilesContainer.appendChild(card);
+        profilesList.appendChild(card);
     });
+
+    // Update navigation buttons
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = end >= totalProfiles;
 }
 
 const passwModal = document.getElementById('passwModal');
@@ -115,7 +145,7 @@ function closeCreate(){
 }
 
 function createProfileHandler(){
-    // validaciones simples para contraseña y nombre 
+    // validaciones simples para contraseña y nombre
     const name = (newUsername.value || '').trim().replace(" ","-");
     const passw = (newPassword.value || '').trim();
     if(!name || !passw){
@@ -131,6 +161,7 @@ function createProfileHandler(){
     // color aleatorio
     const color = randomColor();
     staticUsers[name] = { password: passw, color };
+    saveUsers(); // Persistir en localStorage
     renderProfiles();
     closeCreate();
 }
@@ -143,7 +174,25 @@ function proceedToDesktop(){
     setTimeout(()=> location.href = 'escritorio.html', 350);
 }
 
+// Navigation functions
+function prevProfiles() {
+    if (currentIndex > 0) {
+        currentIndex -= profilesPerPage;
+        renderProfiles();
+    }
+}
+
+function nextProfiles() {
+    const keys = Object.keys(staticUsers);
+    if (currentIndex + profilesPerPage < keys.length) {
+        currentIndex += profilesPerPage;
+        renderProfiles();
+    }
+}
+
 // eventos
+prevBtn.addEventListener('click', prevProfiles);
+nextBtn.addEventListener('click', nextProfiles);
 createBtn.addEventListener('click', openCreate);
 guestBtn.addEventListener('click', guestLogin);
 loginBtn.addEventListener('click', loginUser);
