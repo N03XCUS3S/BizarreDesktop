@@ -1,12 +1,19 @@
 /* Pantalla de sesión estilo selección de usuario */
 :root {
   --bg: #070707;
-  --card: #6a1b9a; /* Deep purple for card background */
-  --accent: #e91e63; /* Pink accent */
-  --muted: #ffeb3b; /* Yellow for muted text */
-  --glass: rgba(255, 255, 255, 0.5); /* More opaque for visibility */
+  --card: #6a1b9a; /* Morado profundo para el fondo de la tarjeta */
+  --accent: #e91e63; /* Acento rosa */
+  --muted: #ffeb3b; /* Amarillo para texto atenuado */
+  --glass: rgba(255, 255, 255, 0.5); /* Más opaco para visibilidad */
 }
-
+@font-face {
+  font-family: 'Fedora'; /* Nombre de la fuente */
+  src: url('../assets/font/sf-fedora.regular.ttf') format('truetype'); /* Ruta al archivo .ttf */
+}
+@font-face {
+  font-family: 'CCWild'; /* Nombre de la fuente */
+  src: url('../assets/font/cc-wild-words-roman.ttf') format('truetype'); /* Ruta al archivo .ttf */
+}
 * {
   box-sizing: border-box;
 }
@@ -14,7 +21,7 @@ html,
 body {
   height: 100%;
   margin: 0;
-  font-family: Segoe UI, Roboto, Arial, sans-serif;
+  font-family: CCWild, Arial, sans-serif;
   background: conic-gradient(from 0deg, hsl(0, 0%, 0%) 0%, #4d0c72 10%, #000 20%, #4d0c72 30%, #000 40%, #4d0c72 50%, #000 60%, #4d0c72 70%, #000 80%, #4d0c72 90%, #000 100%);
   color: #e6eef6;
 }
@@ -32,23 +39,24 @@ body {
 }
 .ls-header h1 {
   margin: 0;
-  font-size: 4.4rem; /* Larger */
+  font-family: Fedora;
+  font-size: 4.4rem; /* Más grande */
   letter-spacing: 1px;
   text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 30px #ffeb3b; 
-  animation: colorCycle 3s infinite; /*animacion de keyfram*/
+  animation: colorCycle 3s infinite; /*animación de keyframe*/
 }
 
 .ls-header p {
   margin: 6px 0 0;
   color: var(--muted);
-  font-size: 1.1rem; /* Slightly larger */
+  font-size: 1.1rem; /* Ligeramente más grande */
 }
 
 @keyframes colorCycle {
-  0% { color: #e91e63; } /* Pink */
-  33% { color: #9c27b0; } /* Purple */
-  66% { color: #9c27b0; } /* Purple */
-  100% { color: #e91e63; } /* Back to pink */
+  0% { color: #e91e63; } /* Rosa */
+  33% { color: #9c27b0; } /* Morado */
+  66% { color: #9c27b0; } /* Morado */
+  100% { color: #e91e63; } /* De vuelta a rosa */
 }
 
 @keyframes modalGlow {
@@ -62,8 +70,8 @@ body {
   flex-direction: column;
   gap: 28px;
   max-width: 960px;
-  width: 960px;
-}
+  width: 100%;
+} 
 /* perfiles */
 .profiles {
   background: url(../assets/imgs/jojosBanner2.jpg) no-repeat center center/cover;
@@ -119,7 +127,6 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  user-select: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   border-radius: 40%;
 }
@@ -162,28 +169,28 @@ body {
   border: none;
   cursor: pointer;
   font-weight: 600;
-  width: 200px;
+  width: 50%;
   height: 50px;
 }
 .btn.primary {
   background: var(--accent);
-  color: #000; /* Darker text for better contrast on gold */
-  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.3); /* Gold shadow for accent */
+  color: #000; /* Texto más oscuro para mejor contraste en oro */
+  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.3); /* Sombra dorada para acento */
 }
 .btn.ghost {
-  background: #ba68c8; /* Lighter purple */
+  background: #ba68c8; /* Morado más claro */
   color: #e6eef6;
   border: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
+  justify-content: space-between;
+  width: 50%;
 }
 .btn.ghost img{
   width: 24px;
   height: 24px;
 }
-/* Modal buttons - separated from ls-main buttons */
+/* Modal buttons - separados de ls-main buttons */
 .modal .btn {
   width: 100px;
   height: 40px;
@@ -217,8 +224,8 @@ body {
   background: var(--card);
   padding: 18px;
   border-radius: 12px;
-  box-shadow: 0 30px 80px rgba(2, 6, 23, 0.6), 0 0 20px #e91e63, 0 0 40px #e91e63; /* Neon pink glow */
-  animation: modalGlow 2s linear infinite alternate; /* Add pulsing glow */
+  box-shadow: 0 30px 80px rgba(2, 6, 23, 0.6), 0 0 20px #e91e63, 0 0 40px #e91e63; /* Brillo rosa neón */
+  animation: modalGlow 2s linear infinite alternate; /* Agregar brillo pulsante */
 }
 .modal-card h2 {
   margin: 0 0 10px;
@@ -237,6 +244,11 @@ body {
   background: rgba(1, 2, 3, 0.4);
   color: #e6eef6;
 }
+
+.modal-card input:focus {
+  background-color: rgba(1, 2, 3, 0.3);;
+}
+
 .modal-actions {
   display: flex;
   gap: 8px;
@@ -248,17 +260,10 @@ body {
   font-size: 0.9rem;
   margin-top: 8px;
 }
-
-/* responsive */
-@media (max-width: 720px) {
-  .ls-main {
-    flex-direction: column;
-    align-items: center;
-  }
-  .controls {
-    width: 100%;
-  }
-  .profiles {
-    width: 100%;
-  }
+.pass-actions{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 15px;
 }
+
+

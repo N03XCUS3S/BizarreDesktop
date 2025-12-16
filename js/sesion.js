@@ -1,6 +1,7 @@
 
 // Gestión simple de perfiles estáticos y navegación a escritorio.html
 const SESSION_KEY = 'jojos_session';
+const transition = document.getElementById('transition');
 
 function randomColor() {
     const hue = Math.floor(Math.random() * (320 - 270 + 1)) + 270;
@@ -86,7 +87,7 @@ function renderProfiles(){
         profilesList.appendChild(card);
     });
 
-    // Update navigation buttons
+    // Actualizar botones de navegación
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = end >= totalProfiles;
 }
@@ -174,7 +175,7 @@ function proceedToDesktop(){
     setTimeout(()=> location.href = 'escritorio.html', 350);
 }
 
-// Navigation functions
+// Funciones de navegación
 function prevProfiles() {
     if (currentIndex > 0) {
         currentIndex -= profilesPerPage;

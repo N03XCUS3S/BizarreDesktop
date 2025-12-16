@@ -1,4 +1,3 @@
-
 // Apagar transición
 document.querySelector('.taskbar-icon:last-child a').addEventListener('click', function(e) {
     e.preventDefault();
@@ -45,6 +44,30 @@ taskbarUser.addEventListener('click', ()=>{
     }
 });
 
+// Función para abrir página de parte en nueva ventana
+function abrirParte(parte) {
+    const url = `partes.html?part=${encodeURIComponent(parte)}`;
+    window.open(url, '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
+}
+
+// Agregar event listeners a los iconos de las partes
+document.addEventListener('DOMContentLoaded', function() {
+    const iconosPartes = {
+        'icon-stardust-crusaders': 'Stardust Crusaders',
+        'icon-diamond-is-unbreakable': 'Diamond is Unbreakable',
+        'icon-golden-wind': 'Vento Aureo',
+        'icon-stone-ocean': 'Stone Ocean'
+    };
+
+    Object.keys(iconosPartes).forEach(iconId => {
+        const iconElement = document.getElementById(iconId);
+        if (iconElement) {
+            iconElement.addEventListener('click', function() {
+                abrirParte(iconosPartes[iconId]);
+            });
+        }
+    });
+});
+
 // mostrar al cargar
 showUser();
-
