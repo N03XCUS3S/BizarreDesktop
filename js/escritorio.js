@@ -44,19 +44,24 @@ taskbarUser.addEventListener('click', ()=>{
     }
 });
 
-// Función para abrir página de parte en nueva ventana
+// Función para abrir página de parte
 function abrirParte(parte) {
     const url = `partes.html?part=${encodeURIComponent(parte)}`;
-    window.open(url, '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
+    location.href = url;
 }
 
 // Agregar event listeners a los iconos de las partes
 document.addEventListener('DOMContentLoaded', function() {
     const iconosPartes = {
+        'icon-phantom-blood': 'Phantom Blood',
+        'icon-battle-tendency': 'Battle Tendency',
         'icon-stardust-crusaders': 'Stardust Crusaders',
         'icon-diamond-is-unbreakable': 'Diamond is Unbreakable',
         'icon-golden-wind': 'Vento Aureo',
-        'icon-stone-ocean': 'Stone Ocean'
+        'icon-stone-ocean': 'Stone Ocean',
+        'icon-steel-ball-run': 'Steel Ball Run',
+        'icon-jojolion': 'JoJolion',
+        'icon-the-jojolands': 'The JoJoLands'
     };
 
     Object.keys(iconosPartes).forEach(iconId => {
