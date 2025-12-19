@@ -375,6 +375,7 @@ body,
 .volume-container {
   margin-top: 1.3rem;
   width: 9%;
+  margin-bottom: 10px;
   transform: rotate(270deg);
 }
 
