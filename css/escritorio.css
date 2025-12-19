@@ -1,6 +1,6 @@
 :root {
   --icon: rgb(106, 27, 154, 0.7);
-  --iconHover: rgb(233, 30, 99,0.7);
+  --iconHover: rgb(233, 30, 99, 0.7);
   --muted: #ffeb3b;
   --blanco: #e6eef6;
 }
@@ -18,7 +18,7 @@
 body {
   margin: 0;
   min-height: 100%;
-  background: url("../assets/imgs/fondoPantalla.jpg") center center/cover
+  background: url("../assets/imgs/fondoEscGr.jpeg") center center/cover
     no-repeat;
   font-family: Fedora, Verdana, sans-serif;
 }
@@ -33,20 +33,20 @@ body {
 
 /* Barra de tareas */
 .taskbar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 10vw;
-    max-width: 150px;
-    height: 100%;
-    background: rgba(7, 7, 7, 0.35);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 1rem;
-    z-index: 10;
-    box-shadow: -2px 0 8px rgba(7, 7, 7, 0.27);
-    color: var(--muted);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 10vw;
+  max-width: 150px;
+  height: 100%;
+  background: rgba(7, 7, 7, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  z-index: 10;
+  box-shadow: -2px 0 8px rgba(7, 7, 7, 0.27);
+  color: var(--muted);
 }
 
 .taskbar-icon {
@@ -61,10 +61,53 @@ body {
   cursor: pointer;
   transition: background 0.2s;
 }
-
-.taskbar-icon:hover {
-  background: var(--iconHover)
+.taskbar-icon img{
+  width: 32px;
+  margin-top: 0px;
 }
+  
+.taskbar-icon:nth-child(1) img{
+  margin-top: 15px;
+}
+  
+.taskbar-icon:hover {
+  background: var(--iconHover);
+}
+
+#taskbarUser {
+  flex-direction: column;
+  align-items: center;
+}
+.taskbar-icon.muted {
+  background: var(--muted);
+}
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-label {
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0.25rem 0;
+}
+
+/* Control de volumen */
+.volume-container {
+  margin-top: 0.5rem;
+  width: 80%;
+
+}
+
+#volumeSlider {
+  width: 100%;
+  cursor: pointer;
+  accent-color: var(--iconHover); /* color rosa tipo JoJo */
+}
+
 
 /* Iconos del escritorio */
 .desktop-icons {
@@ -160,17 +203,17 @@ body {
 }
 
 .window.maximized {
-  top: 0  ;
-  left: 0  ;
-  width: 100vw  ;
-  height: 100vh  ;
-  max-width: 100vw  ;
-  max-height: 100vh  ;
-  border-radius: 0  ;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  border-radius: 0;
 }
 
 .window.minimized {
-  display: none  ;
+  display: none;
 }
 
 .window-content {
@@ -214,58 +257,15 @@ body,
   cursor: url("../assets/cursores/jotaroCursor.png") 64 64, grabbing;
 }
 
-/* Responsive: barra de tareas abajo y ventanas centradas en móvil */
-@media (max-width: 700px) {
-  .taskbar {
-    position: fixed;
-    left: 50%;
-    bottom: 0;
-    top: auto;
-    width: 100vw;
-    height: 70px;
-    max-width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 -2px 8px rgba(7, 7, 7, 0.27);
-    padding-top: 0;
-    padding-bottom: 0.5rem;
-    transform: translateX(-50%);
-  }
-
-  .taskbar-icon {
-    margin: 0 1rem;
-  }
-
-  .desktop-icons {
-    position: absolute;
-    left: 10vw;
-    top: 12vw;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-
-  .window {
-    top: 80px  ;
-    left: 50%  ;
-    transform: translateX(-50%)  ;
-    width: 92vw ;
-    min-width: 180px  ;
-    max-width: 96vw  ;
-    height: auto  ;
-    max-height: 80vh  ;
-  }
-}
-
 /* Evita que todo se mueva al ampliar */
-html,
-body,
+
 .desktop {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: url("https://i.pinimg.com/736x/70/da/fb/70dafb4490a7060ce785251fac039aec.jpg") center/cover
-    no-repeat;
+  background: url("../assets/imgs/fondoEscGr.jpeg")
+    center/cover no-repeat ;
+
 }
 
 /* Apagar transición */
@@ -303,4 +303,84 @@ body,
   to {
     opacity: 1;
   }
+}
+
+/* Responsive: barra de tareas abajo y ventanas centradas en móvil */
+@media (max-width: 800px) {
+  html,
+  body,
+  .desktop {
+    background: url("../assets/imgs/fondoEscPeq.jpg") center/cover no-repeat;
+  }
+
+  .taskbar {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    top: auto;
+    width: 100vw;
+    height: 70px;
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -2px 8px rgba(7, 7, 7, 0.27);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    transform: translateX(-50%);
+  }
+
+  .user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+  }
+
+  .user-container .taskbar-icon {
+    margin: 0;
+  }
+
+  .user-label {
+    display: block;
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+  }
+
+  .taskbar-icon {
+    margin: 0 1rem;
+  }
+
+  .desktop-icons {
+    position: absolute;
+    left: 10vw;
+    top: 12vw;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .window {
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92vw;
+    min-width: 180px;
+    max-width: 96vw;
+    height: auto;
+    max-height: 80vh;
+  }
+
+  /* Control de volumen */
+.volume-container {
+  margin-top: 1.3rem;
+  width: 9%;
+  transform: rotate(270deg);
+}
+
+#volumeSlider {
+  width: 100%;
+  cursor: pointer;
+  accent-color: var(--iconHover); /* color rosa tipo JoJo */
+}
 }

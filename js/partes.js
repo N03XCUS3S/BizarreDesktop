@@ -56,9 +56,9 @@ function generarContenidoParte(parte, datos) {
 
     // Asignar mapa basado en la parte
     const mapasPartes = {
-        "Phantom Blood": "https://static.jojowiki.com/images/thumb/3/3a/latest/20210430072039/Jotaro_SC_Infobox_Anime.png/400px-Jotaro_SC_Infobox_Anime.png",
+        "Phantom Blood": "https://static.jojowiki.com/images/thumb/2/29/latest/20210220034958/Phantom_Blood_Map_-_England.png/1000px-Phantom_Blood_Map_-_England.png",
         "Battle Tendency": "https://static.jojowiki.com/images/thumb/4/4d/latest/20210226072157/Battle_Tendency_Map_-_America_and_Europe.png/1000px-Battle_Tendency_Map_-_America_and_Europe.png",
-        "Stardust Crusaders": "https://static.jojowiki.com/images/a/a9/latest/20191015214651/Volume_12.jpg",
+        "Stardust Crusaders": "https://static.jojowiki.com/images/thumb/0/00/latest/20210308214524/Stardust_Crusaders_Map_-_Asia.png/1000px-Stardust_Crusaders_Map_-_Asia.png",
         "Diamond is Unbreakable": "https://static.jojowiki.com/images/thumb/3/3c/latest/20210309060010/Diamond_is_Unbreakable_Map_-_Morioh.png/1000px-Diamond_is_Unbreakable_Map_-_Morioh.png",
         "Vento Aureo": "https://static.jojowiki.com/images/thumb/5/51/latest/20210309041001/Vento_Aureo_Map_-_Italy.png/1000px-Vento_Aureo_Map_-_Italy.png",
         "Stone Ocean": "https://static.jojowiki.com/images/thumb/b/b2/latest/20210309024448/Stone_Ocean_Map_-_USA.png/1000px-Stone_Ocean_Map_-_USA.png",
@@ -74,12 +74,13 @@ function generarContenidoParte(parte, datos) {
     const mangaPartes = {
         "Phantom Blood": "https://static.jojowiki.com/images/thumb/d/dc/latest/20210407134029/JoJo%27s_Bizarre_Adventure_The_Animation_Japanese_Poster.jpg/800px-JoJo%27s_Bizarre_Adventure_The_Animation_Japanese_Poster.jpg",
         "Battle Tendency": "https://static.jojowiki.com/images/1/15/latest/20240313005515/Volume_5.jpg",
-        "Stardust Crusaders": "",
-        "Vento Aureo": " ",
-        "Stone Ocean": "",
-        "Steel Ball Run": "",
-        "JoJolion": "",
-        "The JoJoLands": ""
+        "Stardust Crusaders": "https://static.jojowiki.com/images/a/a9/latest/20191015214651/Volume_12.jpg",
+        "Diamond is Unbreakable": "https://static.jojowiki.com/images/3/3d/latest/20191015213447/Volume_46.jpg",
+        "Vento Aureo": "https://static.jojowiki.com/images/5/5e/latest/20191015215133/Volume_63.jpg",
+        "Stone Ocean": "https://static.jojowiki.com/images/a/a6/latest/20191015214320/Volume_80.jpg",
+        "Steel Ball Run": "https://static.jojowiki.com/images/2/24/latest/20240416031529/Volume_104.jpg",
+        "JoJolion": "https://static.jojowiki.com/images/f/f0/latest/20250101131855/Volume_112.jpg",
+        "The JoJoLands": "https://static.jojowiki.com/images/e/e8/latest/20251218030928/Volume_138.jpg"
     };
     const mangaImg = document.getElementById('manga-imagen');
     mangaImg.src = mangaPartes[parte] || "assets/imgs/jojosBanner.jpg";

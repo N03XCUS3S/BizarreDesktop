@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Escritorio</title>
+        <link rel="icon" href="assets/imgs/FavIcon.png" type="image/png">
         <link rel="stylesheet" href="css/escritorio.css">
         <script src="js/escritorio.js" defer></script>
     </head>
@@ -33,7 +34,7 @@
                 </div>
                 <div class="desktop-icon" id="icon-golden-wind">
                     <img src="assets/imgs/goldenWind.png" alt="Golden Wind">
-                    Golden Wind
+                    Vento Aureo
                 </div>
                 <div class="desktop-icon" id="icon-stone-ocean">
                     <img src="assets/imgs/stoneOcean.png" alt="Stone Ocean">
@@ -57,20 +58,35 @@
             <!-- barra de tareas -->
             <div class="taskbar">
                 <div class="taskbar-icon" title="User" id="taskbarUser">
-                    <img src="assets/imgs/UserIcon.png" alt="User"
-                        style="width:32px;">
-                </div>
-                <div id="userLabel" class="user-label"></div>
+                    <img src="assets/imgs/UserIcon.png" alt="User">
+                        <div id="userLabel" class="user-label"></div>
+                    </div>
 
-                <div class="taskbar-icon" title="Musica">
-                    <img src="assets/imgs/music.png" alt="musica"
-                        style="width:32px;">
+                <div class="taskbar-icon muted" title="Musica" id="taskbarMusic">
+                    <img src="assets/imgs/music.png" alt="musica">
                 </div>
+                <div class="volume-container">
+                    <input
+                        type="range"
+                        id="volumeSlider"
+                        min="0"
+                        max="100"
+                        value="60">
+                </div>
+
                 <div class="taskbar-icon" title="Salir">
-                    <a><img src="assets/imgs/power.png" alt="Salir"
-                            style="width:32px;"></a>
+                    <a><img src="assets/imgs/power.png" alt="Salir"></a>
                 </div>
             </div>
         </div>
+        <iframe
+            id="youtube-audio"
+            width="1"
+            height="1"
+            src="https://www.youtube.com/embed/o28852--bFE?autoplay=1&loop=1&playlist=o28852--bFE&mute=1&controls=0&enablejsapi=1"
+            allow="autoplay; encrypted-media"
+            frameborder="0">
+        </iframe>
+
     </body>
 </html>

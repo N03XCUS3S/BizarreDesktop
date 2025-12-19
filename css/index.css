@@ -55,7 +55,7 @@ model-viewer {
 
 
 model-viewer.zoom-in {
-  transform: scale(9) translateY(10vh);
+  transform: scale(12) ;
 }
 
 #pantallaHotspot {
