@@ -45,7 +45,7 @@
         ]
     },
     "Battle Tendency": {
-        "summary": "La segunda parte, 'Battle Tendency', transcurre 50 años después de los eventos de Phantom Blood, en 1938. Joseph Joestar, nieto de Jonathan, es un joven estadounidense de 18 años que vive con su abuela Erina Pendleton (viuda de Jonathan) en Nueva York. Joseph descubre su herencia Joestar cuando es atacado por los pilares, una raza de humanos primitivos inmortales liderados por Santana, que han sido despertados por exploradores nazis. Joseph aprende el Hamon de Lisa Lisa, una misteriosa mujer que resulta ser su madre biológica. Junto con Caesar Zeppeli, nieto de Will A. Zeppeli, y Suzi Q, una joven que se une a la aventura, Joseph viaja a Europa para detener a los pilares. La historia incluye batallas en Suiza, Italia y finalmente en un dirigible sobre el océano, donde Joseph se enfrenta a Kars, el líder de los pilares, quien busca la máscara de piedra para convertirse en un ser perfecto. Esta parte explora temas de identidad, legado familiar y la evolución humana, con un tono más humorístico y aventurero.",
+        "summary": "La segunda parte, 'Battle Tendency', transcurre 50 años después de los eventos de Phantom Blood, en 1938. Joseph Joestar, nieto de Jonathan, es un joven estadounidense de 18 años que vive con su abuela Erina Pendleton  viuda de Jonathan) en Nueva York. Joseph descubre su herencia Joestar cuando es atacado por los pilares, una raza de humanos primitivos inmortales liderados por Santana, que han sido despertados por exploradores nazis. Joseph aprende el Hamon de Lisa Lisa, una misteriosa mujer que resulta ser su madre biológica. Junto con Caesar Zeppeli, nieto de Will A. Zeppeli, y Suzi Q, una joven que se une a la aventura, Joseph viaja a Europa para detener a los pilares. La historia incluye batallas en Suiza, Italia y finalmente en un dirigible sobre el océano, donde Joseph se enfrenta a Kars, el líder de los pilares, quien busca la máscara de piedra para convertirse en un ser perfecto. Esta parte explora temas de identidad, legado familiar y la evolución humana, con un tono más humorístico y aventurero.",
         "characters": [
             {
                 "user": "Joseph Joestar",
@@ -90,7 +90,7 @@
         ]
     },
     "Stardust Crusaders": {
-        "summary": "La tercera parte de JoJo's Bizarre Adventure, donde Jotaro Kujo y su grupo viajan para derrotar a Dio con sus Stands.",
+        "summary": "La tercera parte de JoJo's Bizarre Adventure, sigue a Jotaro Kujo y sus aliados en un viaje épico desde Japón hasta Egipto para derrotar al vampiro DIO, quien resucitó y posee el cuerpo de Jonathan Joestar. La misión es salvar a la madre de Jotaro, Holy, cuya vida está en peligro debido a un 'Stand' (manifestación del espíritu de lucha) que DIO despertó en ella y sus descendientes. El grupo, que incluye a Joseph Joestar, Muhammad Avdol, Noriaki Kakyoin y Jean Pierre Polnareff, se enfrenta a poderosos enemigos con Stands únicos enviados por DIO, culminando en una batalla final donde Jotaro descubre que puede detener el tiempo para vencer a DIO y salvar a su familia.",
         "stands": [
             {
                 "type": [
@@ -292,8 +292,8 @@
                 ],
                 "user": "Devo the Cursed",
                 "gender": "Masculino",
-                "hair_color": "Black (",
-                "eye_color": "Red (",
+                "hair_color": "Black  ",
+                "eye_color": "Red  ",
                 "user_images": [
                     "https://static.jojowiki.com/images/thumb/a/a2/latest/20210513070916/Devo_Infobox_Anime.png/400px-Devo_Infobox_Anime.png"
                 ]
@@ -555,8 +555,8 @@
                 ],
                 "user": "Mariah",
                 "gender": "Femenino",
-                "hair_color": "Blonde (",
-                "eye_color": "Blue (",
+                "hair_color": "Blonde  ",
+                "eye_color": "Blue  ",
                 "user_images": [
                     "https://static.jojowiki.com/images/thumb/6/60/latest/20191015214608/Mariah_Infobox_Anime.png/400px-Mariah_Infobox_Anime.png"
                 ]
@@ -704,7 +704,7 @@
         ]
     },
     "Diamond is Unbreakable": {
-        "summary": "La cuarta parte de JoJo's Bizarre Adventure, ambientada en Morioh, con Josuke Higashikata y nuevos Stands.",
+        "summary": "La cuarta parte de JoJo's Bizarre Adventure, sigue a Josuke Higashikata, el hijo ilegítimo de Joseph Joestar, en el tranquilo pueblo de Morioh, que se ve amenazado por un asesino en serie con un Stand llamado Yoshikage Kira. Acompañado por amigos como Koichi y Okuyasu, Josuke usa su Stand, Crazy Diamond, para reparar objetos y curar heridas, mientras investigan y combaten a otros usuarios de Stands y peligros que emergen, culminando en la batalla final contra Kira, un sastre obsesionado con las manos de las mujeres. ",
         "stands": [
             {
                 "type": [
@@ -898,7 +898,7 @@
                 "user": "Keicho Nijimura",
                 "gender": "Masculino",
                 "hair_color": "Blonde ",
-                "eye_color": "Blue (",
+                "eye_color": "Blue  ",
                 "user_images": [
                     "https://static.jojowiki.com/images/thumb/4/46/latest/20210907212017/Keicho_Nijimura_Infobox_Anime.png/400px-Keicho_Nijimura_Infobox_Anime.png"
                 ]
@@ -989,8 +989,8 @@
                 ],
                 "user": "Tonio Trussardi",
                 "gender": "Masculino",
-                "hair_color": "Brown (",
-                "eye_color": "Blue (",
+                "hair_color": "Brown  ",
+                "eye_color": "Blue  ",
                 "user_images": [
                     "https://static.jojowiki.com/images/thumb/8/87/latest/20220112144423/Tonio_Trussardi_Infobox_Anime.png/400px-Tonio_Trussardi_Infobox_Anime.png"
                 ]
@@ -1119,8 +1119,8 @@
                 ],
                 "user": "Ken Oyanagi",
                 "gender": "Masculino",
-                "hair_color": "Ginger (",
-                "eye_color": "Brown (",
+                "hair_color": "Ginger  ",
+                "eye_color": "Brown  ",
                 "user_images": [
                     "https://static.jojowiki.com/images/thumb/b/b8/latest/20191015214618/Ken_Oyanagi_Infobox_Anime.png/400px-Ken_Oyanagi_Infobox_Anime.png"
                 ]
@@ -1180,7 +1180,7 @@
                 ],
                 "user": "Tama",
                 "gender": "Masculino",
-                "hair_color": "Blueish gray (fur)",
+                "hair_color": "Blueish gray  fur)",
                 "eye_color": "Gold",
                 "user_images": [
                     "https://static.jojowiki.com/images/thumb/0/02/latest/20191015215927/Tama_Infobox_Anime.png/400px-Tama_Infobox_Anime.png"
@@ -1245,7 +1245,7 @@
         ]
     },
     "Vento Aureo": {
-        "summary": "La quinta parte de JoJo's Bizarre Adventure, en Italia, con Giorno Giovanna y Passione.",
+        "summary": "La quinta parte de JoJo's Bizarre Adventure, sigue a Giorno Giovanna, el hijo de Dio Brando con ADN de Jonathan Joestar, en la Italia de 2001, donde sueña con convertirse en 'Gang-Star' para reformar la mafia Passione desde dentro, uniéndose a Bruno Buccellati para luchar contra la corrupción y el jefe, un viaje que los lleva a proteger a la hija del jefe y enfrentarse a peligrosas misiones que revelarán oscuros secretos, todo mientras Giorno usa su Stand, Gold Experience, para crear vida y superar obstáculos.",
         "stands": [
             {
                 "type": [
@@ -1259,7 +1259,7 @@
                 ],
                 "user": "Giorno Giovanna",
                 "gender": "Masculino",
-                "hair_color": "Black (pre-Part 5)",
+                "hair_color": "Black  pre-Part 5)",
                 "eye_color": "Blue ",
                 "user_images": [
                     "https://static.jojowiki.com/images/thumb/4/4a/latest/20210422070411/Giorno_Giovanna_Infobox_Anime.png/400px-Giorno_Giovanna_Infobox_Anime.png"
@@ -1314,7 +1314,7 @@
                 "user": "Guido Mista",
                 "gender": "Masculino",
                 "hair_color": "Unknown",
-                "eye_color": "Black (",
+                "eye_color": "Black  ",
                 "user_images": [
                     "https://static.jojowiki.com/images/thumb/c/c6/latest/20210827063749/Guido_Mista_Infobox_Anime.png/400px-Guido_Mista_Infobox_Anime.png"
                 ]
@@ -1444,7 +1444,7 @@
                 ],
                 "user": "Giorno Giovanna",
                 "gender": "Masculino",
-                "hair_color": "Black (pre-Part 5)",
+                "hair_color": "Black  pre-Part 5)",
                 "eye_color": "Blue ",
                 "user_images": [
                     "https://static.jojowiki.com/images/thumb/4/4a/latest/20210422070411/Giorno_Giovanna_Infobox_Anime.png/400px-Giorno_Giovanna_Infobox_Anime.png"
@@ -1508,7 +1508,7 @@
                 "user": "Polpo",
                 "gender": "Masculino",
                 "hair_color": "Unknown",
-                "eye_color": "Black sclera/Red irises (",
+                "eye_color": "Black sclera/Red irises  ",
                 "user_images": [
                     "https://static.jojowiki.com/images/thumb/f/ff/latest/20191015213339/Polpo_Infobox_Anime.png/400px-Polpo_Infobox_Anime.png"
                 ]
@@ -1524,8 +1524,8 @@
                 ],
                 "user": "Mario Zucchero",
                 "gender": "Masculino",
-                "hair_color": "Grey (",
-                "eye_color": "Dark Blue (",
+                "hair_color": "Grey  ",
+                "eye_color": "Dark Blue  ",
                 "user_images": [
                     "https://static.jojowiki.com/images/thumb/9/97/latest/20191015213700/Mario_Zucchero_Infobox_Anime.png/400px-Mario_Zucchero_Infobox_Anime.png"
                 ]
@@ -1542,7 +1542,7 @@
                 "user": "Sale",
                 "gender": "Masculino",
                 "hair_color": "Ginger ",
-                "eye_color": "Aquamarine (",
+                "eye_color": "Aquamarine",
                 "user_images": [
                     "https://static.jojowiki.com/images/thumb/6/6e/latest/20200419195908/Sale_Anime_Infobox.png/400px-Sale_Anime_Infobox.png"
                 ]
@@ -1700,7 +1700,7 @@
                 "user": "Carne",
                 "gender": "Masculino",
                 "hair_color": "Green ",
-                "eye_color": "Black (",
+                "eye_color": "Black  ",
                 "user_images": [
                     "https://static.jojowiki.com/images/thumb/e/e0/latest/20191015215156/Carne_Infobox_Anime.png/400px-Carne_Infobox_Anime.png"
                 ]
@@ -1778,7 +1778,7 @@
         ]
     },
     "Stone Ocean": {
-        "summary": "La sexta parte de JoJo's Bizarre Adventure, con Jolyne Cujoh en prisión.",
+        "summary": "La sexta parte de JoJo's Bizarre Adventure sigue a Jolyne Cujoh, hija de Jotaro Kujo, quien es encarcelada injustamente en la prisión de máxima seguridad Green Dolphin Street en Florida. Mientras lucha por sobrevivir y limpiar su nombre, Jolyne descubre que ha heredado un Stand llamado Stone Free. Junto a otros presos con Stands, debe enfrentarse a enemigos poderosos y desentrañar una conspiración liderada por el sacerdote Enrico Pucci, un seguidor de Dio Brando, que busca reescribir el destino del mundo.",
         "stands": [
             {
                 "type": [
@@ -1869,7 +1869,7 @@
                     "https://static.jojowiki.com/images/5/53/latest/20220329200821/Foo_Fighters_Plankton_Anime_Infobox.png"
                 ],
                 "user": "F.F.",
-                "gender": "Female(?)[note1]",
+                "gender": "Female ?)[note1]",
                 "hair_color": "Green ",
                 "eye_color": "Brown ",
                 "user_images": [
@@ -2093,8 +2093,8 @@
                 "stand_images": [],
                 "user": "Viviano Westwood",
                 "gender": "Masculino",
-                "hair_color": "Black (",
-                "eye_color": "Blue (",
+                "hair_color": "Black  ",
+                "eye_color": "Blue  ",
                 "user_images": [
                     "https://static.jojowiki.com/images/thumb/0/0b/latest/20220326112255/Viviano_Westwood_Anime_Infobox.png/400px-Viviano_Westwood_Anime_Infobox.png"
                 ]
@@ -2161,7 +2161,7 @@
                 "user": "Miuccia Miuller",
                 "gender": "Femenino",
                 "hair_color": "Rubio",
-                "eye_color": "Dark Green (",
+                "eye_color": "Dark Green  ",
                 "user_images": []
             },
             {
@@ -2228,7 +2228,7 @@
         ]
     },
     "Steel Ball Run": {
-        "summary": "La séptima parte de JoJo's Bizarre Adventure, una historia alternativa en el siglo XIX.",
+        "summary": "La septima parte de JoJo's Bizarre Adventure, ambientada en una realidad alternativa, sigue a Johnny Joestar, un ex jinete parapléjico, y Gyro Zeppeli, un maestro de la técnica de Spin, mientras compiten en la carrera Steel Ball Run a través de los Estados Unidos en 1890. A lo largo del camino, enfrentan numerosos desafíos y enemigos mientras buscan los fragmentos de un misterioso objeto conocido como el Santo Corpse, que otorga poderes extraordinarios a quienes lo poseen.",
         "stands": [
             {
                 "type": [
@@ -2323,7 +2323,7 @@
         ]
     },
     "JoJolion": {
-        "summary": "La octava parte de JoJo's Bizarre Adventure, con Josuke Higashikata en una realidad alternativa.",
+        "summary": "La octava parte de JoJo's Bizarre Adventure sigue a Josuke Higashikata, un joven que sufre de amnesia y posee un extraño Stand llamado Soft & Wet. Ambientada en la ciudad ficticia de Morioh en una realidad alternativa, la historia explora los misterios detrás de la familia Higashikata, la extraña enfermedad conocida como 'Locura de Rokakaka' y los secretos ocultos en la ciudad. A medida que Josuke busca descubrir su identidad y el pasado de Morioh, se enfrenta a varios enemigos con Stands únicos y peligrosos.",
         "stands": [
             {
                 "type": [
@@ -2418,7 +2418,7 @@
         ]
     },
     "The JoJoLands": {
-        "summary": "La novena parte de JoJo's Bizarre Adventure, con Jodio Joestar en Hawái.",
+        "summary": "La novena parte de JoJo's Bizarre Adventure sigue a Jodio Joestar, un joven que aspira a convertirse en un mangaka, y a su amiga Dragona Joestar, mientras exploran la isla ficticia de Oahu en Hawái. Ambos poseen Stands únicos: Jodio tiene November Rain, que le permite manipular gotas de lluvia afiladas como cuchillas, y Dragona posee Smooth Operators, que controla pequeños robots. A medida que se enfrentan a desafíos y enemigos en la isla, descubren secretos ocultos y desarrollan sus habilidades de Stand.",
         "stands": [
             {
                 "type": [

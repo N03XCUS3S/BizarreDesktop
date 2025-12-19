@@ -3,7 +3,7 @@ document.querySelector('.taskbar-icon:last-child a').addEventListener('click', f
     e.preventDefault();
     let shutdown = document.createElement('div');
     shutdown.className = 'shutdown-transition';
-    shutdown.innerHTML = '<div class="shutdown-text">Apagando...</div>';
+    shutdown.innerHTML = '<div class="shutdown-text">To be continued...</div>';
     document.body.appendChild(shutdown);
     setTimeout(() => {
         window.location.href = 'index.html';

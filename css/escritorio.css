@@ -1,190 +1,205 @@
+:root {
+  --icon: rgb(106, 27, 154, 0.7);
+  --iconHover: rgb(233, 30, 99,0.7);
+  --muted: #ffeb3b;
+  --blanco: #e6eef6;
+}
+
+@font-face {
+  font-family: "Fedora";
+  src: url("../assets/font/sf-fedora.regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CCWild";
+  src: url("../assets/font/cc-wild-words-roman.ttf") format("truetype");
+}
+
 /* Fondo y fuente */
 body {
-    margin: 0;
-    min-height: 100%;
-    background: url('../assets/imgs/fondoPantalla.jpg') center center/cover no-repeat;
-    font-family: 'Segoe UI', Verdana, sans-serif;
+  margin: 0;
+  min-height: 100%;
+  background: url("../assets/imgs/fondoPantalla.jpg") center center/cover
+    no-repeat;
+  font-family: Fedora, Verdana, sans-serif;
 }
 
 /* Escritorio */
 .desktop {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
 }
 
 /* Barra de tareas */
 .taskbar {
     position: fixed;
-    right: 0;
+    left: 0;
     top: 0;
-    width: 10%;
+    width: 10vw;
     max-width: 150px;
     height: 100%;
-    background: rgba(7, 7, 7, 0.85);
+    background: rgba(7, 7, 7, 0.35);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 1rem;
     z-index: 10;
-    box-shadow: -2px 0 8px rgba(7,7,7,0.27);
+    box-shadow: -2px 0 8px rgba(7, 7, 7, 0.27);
+    color: var(--muted);
 }
 
 .taskbar-icon {
-    width: 48px;
-    height: 48px;
-    margin: 1rem 0;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.2s;
+  width: 48px;
+  height: 48px;
+  margin: 1rem 0;
+  background: var(--icon);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
 .taskbar-icon:hover {
-    background: rgba(251, 225, 173, 0.18);
+  background: var(--iconHover)
 }
 
 /* Iconos del escritorio */
 .desktop-icons {
-    position: absolute;
-    left: 40px;
-    top: 40px;
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    place-items: center;
-    gap: 2.5rem;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  gap: 2.5rem;
 }
 
 .desktop-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    font-size: 1.3rem;
-    text-align: center;
-    color: #eb5694;
-    padding: 0.1rem 0.25rem;
-    text-shadow:2px 2px 8px #7a64b7,
-                2px 2px 1px #000,
-                2px 2px 2px #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #eb5694;
+  padding: 0.1rem 0.25rem;
+  text-shadow: 2px 2px 8px #7a64b7, 2px 2px 1px #000, 2px 2px 2px #fff;
 }
 
 .desktop-icon img {
-    height: 60px;
-    margin-bottom: 0.5rem;
-    border-radius: 14px;
+  height: 60px;
+  margin-bottom: 0.5rem;
+  border-radius: 14px;
 }
 
 /* Ventanas estilo SSOO con controles */
 .window {
-    position: fixed;
-    top: 120px;
-    left: 160px;
-    width: 340px;
-    min-width: 220px;
-    min-height: 120px;
-    max-width: 95vw;
-    max-height: 90vh;
-    background: rgba(122, 100, 183);
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(7,7,7,0.53);
-    z-index: 100;
-    animation: windowIn 0.1s;
-    display: flex;
-    flex-direction: column;
-    resize: both;
-    overflow: auto;
-    transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+  position: fixed;
+  top: 120px;
+  left: 160px;
+  width: 340px;
+  min-width: 220px;
+  min-height: 120px;
+  max-width: 95vw;
+  max-height: 90vh;
+  background: rgba(122, 100, 183);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(7, 7, 7, 0.53);
+  z-index: 100;
+  animation: windowIn 0.1s;
+  display: flex;
+  flex-direction: column;
+  resize: both;
+  overflow: auto;
+  transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
 }
 
 .window-header {
-    padding: 0.7rem 1rem;
-    background: rgba(7, 7, 7, 0.95);
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    font-weight: bold;
-    color: #fbe1ad;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: move;
-    user-select: none;
+  padding: 0.7rem 1rem;
+  background: rgba(7, 7, 7, 0.95);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  font-weight: bold;
+  color: #fbe1ad;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  user-select: none;
 }
 
 .window-controls {
-    display: flex;
-    gap: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .window-control {
-    width: 22px;
-    height: 22px;
-    border: none;
-    border-radius: 50%;
-    background: #7a64b7;
-    color: #fbe1ad;
-    font-size: 1.1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 50%;
+  background: #7a64b7;
+  color: #fbe1ad;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
 }
 
 .window-control:hover {
-    background: #eb5694;
+  background: #eb5694;
 }
 
 .window.maximized {
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    max-width: 100vw !important;
-    max-height: 100vh !important;
-    border-radius: 0 !important;
+  top: 0  ;
+  left: 0  ;
+  width: 100vw  ;
+  height: 100vh  ;
+  max-width: 100vw  ;
+  max-height: 100vh  ;
+  border-radius: 0  ;
 }
 
 .window.minimized {
-    display: none !important;
+  display: none  ;
 }
 
 .window-content {
-    padding: 1rem;
-    color: #fbe1ad;
-    font-size: 1rem;
+  padding: 1rem;
+  color: #fbe1ad;
+  font-size: 1rem;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 @keyframes windowIn {
-    from {
-        transform: scale(0.7) translateY(40px);
-        opacity: 0;
-    }
+  from {
+    transform: scale(0.7) translateY(40px);
+    opacity: 0;
+  }
 
-    to {
-        transform: scale(1) translateY(0);
-        opacity: 1;
-    }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
 }
-
 
 /* Cursor personalizado para todo el escritorio */
 body,
 .desktop,
 .taskbar {
-    cursor: url('../assets/cursores/toBeContinued.png') 64 64, auto;
+  cursor: url("../assets/cursores/toBeContinued.png") 64 64, auto;
 }
 
 .desktop-icon,
@@ -192,100 +207,100 @@ body,
 .window-control,
 .window-close,
 .taskbar-icon {
-    cursor: url('../assets/cursores/jotaroPointer.png') 64 64, pointer;
+  cursor: url("../assets/cursores/jotaroPointer.png") 64 64, pointer;
 }
 
 .window-header:active {
-    cursor: url('../assets/cursores/jotaroCursor.png') 64 64, grabbing;
+  cursor: url("../assets/cursores/jotaroCursor.png") 64 64, grabbing;
 }
 
-
 /* Responsive: barra de tareas abajo y ventanas centradas en móvil */
-@media screen and (max-width: 700px) {
-    .taskbar {
-        position: fixed;
-        left: 50%;
-        bottom: 0;
-        top: auto;
-        width: 90vw;
-        height: 70px;
-        max-width: 90vw;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 -2px 8px rgba(7,7,7,0.27);
-        padding-top: 0;
-        padding-bottom: 0.5rem;
-        transform: translateX(-50%);
-    }
+@media (max-width: 700px) {
+  .taskbar {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    top: auto;
+    width: 100vw;
+    height: 70px;
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -2px 8px rgba(7, 7, 7, 0.27);
+    padding-top: 0;
+    padding-bottom: 0.5rem;
+    transform: translateX(-50%);
+  }
 
-    .taskbar-icon {
-        margin: 0 1rem;
-    }
+  .taskbar-icon {
+    margin: 0 1rem;
+  }
 
-    .desktop-icons {
-        position: absolute;
-        left: 10vw;
-        top: 12vw;
-        flex-direction: row;
-        gap: 1.2rem;
-    }
+  .desktop-icons {
+    position: absolute;
+    left: 10vw;
+    top: 12vw;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
 
-    .window {
-        top: 80px !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        width: 92vw !important;
-        min-width: 180px !important;
-        max-width: 96vw !important;
-        height: auto !important;
-        max-height: 80vh !important;
-    }
+  .window {
+    top: 80px  ;
+    left: 50%  ;
+    transform: translateX(-50%)  ;
+    width: 92vw ;
+    min-width: 180px  ;
+    max-width: 96vw  ;
+    height: auto  ;
+    max-height: 80vh  ;
+  }
 }
 
 /* Evita que todo se mueva al ampliar */
 html,
 body,
 .desktop {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: url("https://i.pinimg.com/736x/70/da/fb/70dafb4490a7060ce785251fac039aec.jpg") center/cover
+    no-repeat;
 }
 
 /* Apagar transición */
 .shutdown-transition {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #070707;
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    animation: shutdownFade 1.2s forwards;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #070707;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: shutdownFade 1.2s forwards;
 }
 
 .shutdown-text {
-    color: #fbe1ad;
-    font-size: 2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 2px;
-    opacity: 0;
-    animation: shutdownText 0.8s 0.3s forwards;
+  color: #fbe1ad;
+  font-size: 2rem;
+  font-family: Fedora, CCWild, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: shutdownText 0.8s 0.3s forwards;
 }
 
 @keyframes shutdownFade {
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes shutdownText {
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
-
