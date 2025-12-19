@@ -1,19 +1,20 @@
 /* Pantalla de sesión estilo selección de usuario */
 :root {
     --bg: #070707;
-  --card: #6a1b9a; /* Morado profundo para el fondo de la tarjeta */
-  --accent: #e91e63; /* Acento rosa */
-  --muted: #ffeb3b; /* Amarillo para texto atenuado */
-  --glass: rgba(255, 255, 255, 0.5); /* Más opaco para visibilidad */
+  --card: #6a1b9a; 
+  --card2: #a924bb; 
+  --accent: #e91e63;
+  --muted: #ffeb3b; 
+  --glass: rgba(255, 255, 255, 0.5); 
   --blanco: #e6eef6;
 }
 @font-face {
-  font-family: 'Fedora'; /* Nombre de la fuente */
-  src: url('../assets/font/sf-fedora.regular.ttf') format('truetype'); /* Ruta al archivo .ttf */
+  font-family: 'Fedora'; 
+  src: url('../assets/font/sf-fedora.regular.ttf') format('truetype'); 
 }
 @font-face {
-  font-family: 'CCWild'; /* Nombre de la fuente */
-  src: url('../assets/font/cc-wild-words-roman.ttf') format('truetype'); /* Ruta al archivo .ttf */
+  font-family: 'CCWild'; 
+  src: url('../assets/font/cc-wild-words-roman.ttf') format('truetype'); 
 }
 
 /* default  */
@@ -33,9 +34,7 @@ a{
     text-decoration: none;
     color: var(--blanco);
 }
-
-/* header y navbar */
-
+/*  Header  */
 header{
     font-family: Fedora;
     width: 100%;
@@ -65,7 +64,7 @@ header nav a{
     margin: 0 20px;
 }
 
-/* main content */
+/* Main */
 main {
     display: flex;
     align-items: flex-start;
@@ -251,7 +250,16 @@ aside a {
     border-radius: 5px;
     transition: background-color 0.2s;
 }
+aside a:nth-child(1) {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: var(--card2);
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
 
 aside a:hover {
     background-color: var(--accent);
+    transform: translate(2%);
 }

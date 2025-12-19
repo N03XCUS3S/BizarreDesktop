@@ -56,7 +56,7 @@ function generarContenidoParte(parte, datos) {
 
     // Asignar mapa basado en la parte
     const mapasPartes = {
-        "Phantom Blood": "https://static.jojowiki.com/images/thumb/0/0f/latest/20200320000000/Phantom_Blood_Volume_1.png/400px-Phantom_Blood_Volume_1.png",
+        "Phantom Blood": "https://static.jojowiki.com/images/thumb/2/29/latest/20210220034958/Phantom_Blood_Map_-_England.png/307px-Phantom_Blood_Map_-_England.png",
         "Battle Tendency": "https://static.jojowiki.com/images/thumb/0/0f/latest/20200320000000/Phantom_Blood_Volume_1.png/400px-Phantom_Blood_Volume_1.png",
         "Stardust Crusaders": "https://static.jojowiki.com/images/thumb/0/0f/latest/20200320000000/Phantom_Blood_Volume_1.png/400px-Phantom_Blood_Volume_1.png",
         "Diamond is Unbreakable": "https://static.jojowiki.com/images/thumb/0/0f/latest/20200320000000/Phantom_Blood_Volume_1.png/400px-Phantom_Blood_Volume_1.png",
