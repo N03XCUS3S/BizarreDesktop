@@ -23,7 +23,7 @@ Este proyecto ofrece acceso a información sobre JoJo de forma interactiva y vis
 
 ## Autor
 
-Desarrollado por N03XCUS3S.
+Desarrollado por IanBonilla.
 
 
 # Paleta de colorSes
