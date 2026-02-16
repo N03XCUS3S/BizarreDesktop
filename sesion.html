@@ -25,10 +25,18 @@
                     <button id="nextBtn" class="nav-btn right">></button>
                 </section>
 
+<<<<<<< Updated upstream
                 <div class="controls">
                     <button id="createBtn" class="btn primary">Crear perfil</button>
                     <button id="guestBtn" class="btn ghost"><img src="assets/imgs/UserIcon.png"></img>Invitado</button>
                 </div>
+=======
+                <aside class="controls">
+                    <button id="createBtn" class="btn primary">Crear
+                        perfil</button>
+                    <button id="guestBtn" class="btn ghost"><img src="assets/imgs/UserIcon.png" alt="Icono de usuario">Invitado</button>
+                </aside>
+>>>>>>> Stashed changes
             </main>
         </div>
 
@@ -36,14 +44,14 @@
         <div id="createModal" class="modal hidden">
             <div class="modal-card">
                 <h2>Crear perfil</h2>
-                <label>
+                <label for="newUsername">
                     Nombre de usuario
                     <input id="newUsername" type="text" placeholder="ej. pepito"
                         maxlength="24" required>
                 </label>
-                <label>
+                <label for="newPassword">
                     Contraseña
-                    <input id="newPassword" type="text" maxlength="32"
+                    <input id="newPassword" type="password" maxlength="32"
                         placeholder="passw" required>
                 </label>
                 <div class="modal-actions">
@@ -58,7 +66,12 @@
         <div id="passwModal" class="modal invisible">
             <div class="modal-card">
                 <h2>Iniciar sesión</h2>
+<<<<<<< Updated upstream
                 <label>
+=======
+                <label for="loginPassword">
+                    Contraseña
+>>>>>>> Stashed changes
                     <input id="loginPassword" type="password" maxlength="32"
                         placeholder="Contraseña" required>
                 </label>
