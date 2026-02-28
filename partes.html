@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
+        <title>Partes - JoJo's Desktop</title>
         <link rel="icon" href="assets/imgs/FavIcon.png" type="image/png">
         <link rel="stylesheet" href="css/partes.css">
         <script src="js/partes.js" defer></script>
     </head>
     <body>
-        <header id="#">
-            <h1></h1>
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+        <header id="header">
+            <h1 id="page-title"></h1>
+            <nav aria-label="Navegación principal">
+                <a href="escritorio.html">Volver al escritorio</a>
+            </nav>
         </header>
-        <main>
-            <div class="part">
+        <main id="main-content">
+            <div class="part" role="banner" aria-label="Banner de la parte">
             </div>
             <div class="principal">
                 <div class="info">
@@ -22,7 +26,7 @@
                 </div>
                 <div class="characters" id="characters-section">
                     <h2>Personajes</h2>
-                    <div id="characters-list"></div>
+                    <div id="characters-list" role="list" aria-label="Lista de personajes"></div>
                 </div>
                 <div class="mapas" id="mapas">
                     <h2>Localizaciones</h2>
@@ -33,16 +37,18 @@
                     <img id="manga-imagen" alt="Portada del manga">
                 </div>
             </div>
-            <aside>
-                <div>
-                    <a href="#">Escritorio</a>
+            <aside aria-label="Navegación de la página">
+                <nav>
+                    <a href="escritorio.html">Escritorio</a>
                     <a href="#res">Resumen</a>
                     <a href="#characters-section">Personajes</a>
                     <a href="#mapas">Localizaciones</a>
                     <a href="#manga">Manga</a>
-                    <a href="#foot">Bajar</a>
-                </div>
+                </nav>
             </aside>
         </main>
+        <footer id="foot" aria-label="Pie de página">
+            <p>© 2024 JoJo's Desktop</p>
+        </footer>
     </body>
 </html>

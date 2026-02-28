@@ -1,4 +1,8 @@
 /* Fondo cósmico con resplandor central y estrellas */
+:root {
+  --focus-outline: #ffeb3b;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -7,13 +11,14 @@ body {
   font-family: "Segoe UI", Verdana, sans-serif;
   background: radial-gradient(ellipse at 50% 50%, #7a64b7 0%, #070707 100%);
 }
+
 #starsCanvas {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1; /* para que quede en fondo */
+  z-index: -1;
 }
 
 .space-bg {
@@ -50,25 +55,62 @@ model-viewer {
   z-index: 10;
   transition: transform 2.5s ease-in-out;
   transform-origin: calc(50% + 20px) calc(50% - 10px);
-
 }
 
-
 model-viewer.zoom-in {
-  transform: scale(12) ;
+  transform: scale(12);
 }
 
 #pantallaHotspot {
-  width: 300px; /* relativo al modelo */
+  width: 300px;
   height: 200px;
   border: none;
   background: transparent;
   pointer-events: auto;
 }
+
+/* ===== ACCESIBILIDAD: Indicadores de foco visibles ===== */
+*:focus {
+  outline: 3px solid var(--focus-outline);
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 3px solid var(--focus-outline);
+  outline-offset: 2px;
+}
+
+#pantallaHotspot:focus-visible {
+  outline: 3px solid var(--focus-outline);
+  outline-offset: 2px;
+  box-shadow: 0 0 20px var(--focus-outline);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--focus-outline);
+  color: #000;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Transición */
 .transition {
     opacity: 0;
     transition: opacity 2s ease;
-    /* otros estilos */
 }
 
 .transition.active {
@@ -76,3 +118,22 @@ model-viewer.zoom-in {
     pointer-events: auto;
 }
 
+/* ===== prefers-reduced-motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  model-viewer {
+    transition: none;
+  }
+  
+  .transition {
+    transition: none;
+  }
+}

@@ -3,6 +3,7 @@
   --iconHover: rgb(233, 30, 99, 0.7);
   --muted: #ffeb3b;
   --blanco: #e6eef6;
+  --focus-outline: #ffeb3b;
 }
 
 @font-face {
@@ -18,8 +19,7 @@
 body {
   margin: 0;
   min-height: 100%;
-  background: url("../assets/imgs/fondoEscGr.jpeg") center center/cover
-    no-repeat;
+  background: url("../assets/imgs/fondoEscGr.jpeg") center center/cover no-repeat;
   font-family: Fedora, Verdana, sans-serif;
 }
 
@@ -99,15 +99,13 @@ body {
 .volume-container {
   margin-top: 0.5rem;
   width: 80%;
-
 }
 
 #volumeSlider {
   width: 100%;
   cursor: pointer;
-  accent-color: var(--iconHover); /* color rosa tipo JoJo */
+  accent-color: var(--iconHover);
 }
-
 
 /* Iconos del escritorio */
 .desktop-icons {
@@ -231,41 +229,90 @@ body {
     transform: scale(0.7) translateY(40px);
     opacity: 0;
   }
-
   to {
     transform: scale(1) translateY(0);
     opacity: 1;
   }
 }
 
-/* Cursor personalizado para todo el escritorio */
-body,
-.desktop,
-.taskbar {
-  cursor: url("../assets/cursores/toBeContinued.png") 64 64, auto;
+/* ===== CURSORES ESTÁNDAR DEL SISTEMA (más intuitivos) ===== */
+body, .desktop, .taskbar {
+  cursor: default;
 }
 
-.desktop-icon,
-.taskbar-icon,
-.window-control,
-.window-close,
-.taskbar-icon {
-  cursor: url("../assets/cursores/jotaroPointer.png") 64 64, pointer;
+.desktop-icon, .taskbar-icon, .window-control, .window-close {
+  cursor: pointer;
+}
+
+.window-header {
+  cursor: move;
 }
 
 .window-header:active {
-  cursor: url("../assets/cursores/jotaroCursor.png") 64 64, grabbing;
+  cursor: grabbing;
+}
+
+/* ===== ACCESIBILIDAD: Indicadores de foco visibles ===== */
+*:focus {
+  outline: 3px solid var(--focus-outline);
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 3px solid var(--focus-outline);
+  outline-offset: 2px;
+}
+
+.desktop-icon:focus-visible,
+.taskbar-icon:focus-visible,
+.window-control:focus-visible,
+.window-close:focus-visible,
+.nav-btn:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--focus-outline);
+  outline-offset: 2px;
+  box-shadow: 0 0 10px var(--focus-outline);
+}
+
+/* Skip link oculto pero visible cuando se enfoca */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--muted);
+  color: #000;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ===== prefers-reduced-motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Evita que todo se mueva al ampliar */
-
 .desktop {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: url("../assets/imgs/fondoEscGr.jpeg")
-    center/cover no-repeat ;
-
+  background: url("../assets/imgs/fondoEscGr.jpeg") center/cover no-repeat;
 }
 
 /* Apagar transición */
@@ -294,22 +341,16 @@ body,
 }
 
 @keyframes shutdownFade {
-  to {
-    opacity: 1;
-  }
+  to { opacity: 1; }
 }
 
 @keyframes shutdownText {
-  to {
-    opacity: 1;
-  }
+  to { opacity: 1; }
 }
 
 /* Responsive: barra de tareas abajo y ventanas centradas en móvil */
 @media (max-width: 800px) {
-  html,
-  body,
-  .desktop {
+  html, body, .desktop {
     background: url("../assets/imgs/fondoEscPeq.jpg") center/cover no-repeat;
   }
 
@@ -371,17 +412,16 @@ body,
     max-height: 80vh;
   }
 
-  /* Control de volumen */
-.volume-container {
-  margin-top: 1.3rem;
-  width: 9%;
-  margin-bottom: 10px;
-  transform: rotate(270deg);
-}
+  .volume-container {
+    margin-top: 1.3rem;
+    width: 9%;
+    margin-bottom: 10px;
+    transform: rotate(270deg);
+  }
 
-#volumeSlider {
-  width: 100%;
-  cursor: pointer;
-  accent-color: var(--iconHover); /* color rosa tipo JoJo */
-}
+  #volumeSlider {
+    width: 100%;
+    cursor: pointer;
+    accent-color: var(--iconHover);
+  }
 }

@@ -3,83 +3,71 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Iniciar sesión</title>
+        <title>Iniciar sesión - JoJo's Desktop</title>
         <link rel="icon" href="assets/imgs/FavIcon.png" type="image/png">
         <link rel="stylesheet" href="css/sesion.css">
         <script src="js/sesion.js" defer></script>
     </head>
     <body>
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
         <div class="login-screen">
-            <main class="ls-main">
+            <main class="ls-main" id="main-content">
 
                 <header class="ls-header">
                     <h1>Bienvenido</h1>
                     <p>Seleccione su usuario o cree uno nuevo</p>
                 </header>
 
-                <section class="profiles" id="profilesContainer">
-                    <button id="prevBtn" class="nav-btn left"><</button>
-                    <div id="profilesList" class="profiles-list">
+                <section class="profiles" id="profilesContainer" aria-label="Selección de perfil de usuario">
+                    <button id="prevBtn" class="nav-btn left" aria-label="Perfil anterior">&#8249;</button>
+                    <div id="profilesList" class="profiles-list" role="listbox" aria-label="Lista de perfiles">
                         <!-- Perfiles renderizados por JS -->
                     </div>
-                    <button id="nextBtn" class="nav-btn right">></button>
+                    <button id="nextBtn" class="nav-btn right" aria-label="Siguiente perfil">&#8250;</button>
                 </section>
 
-<<<<<<< Updated upstream
-                <div class="controls">
-                    <button id="createBtn" class="btn primary">Crear perfil</button>
-                    <button id="guestBtn" class="btn ghost"><img src="assets/imgs/UserIcon.png"></img>Invitado</button>
-                </div>
-=======
                 <aside class="controls">
-                    <button id="createBtn" class="btn primary">Crear
-                        perfil</button>
+                    <button id="createBtn" class="btn primary">Crear perfil</button>
                     <button id="guestBtn" class="btn ghost"><img src="assets/imgs/UserIcon.png" alt="Icono de usuario">Invitado</button>
                 </aside>
->>>>>>> Stashed changes
             </main>
         </div>
 
         <!-- Modal crear perfil simple -->
-        <div id="createModal" class="modal hidden">
+        <div id="createModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="createModalTitle">
             <div class="modal-card">
-                <h2>Crear perfil</h2>
+                <h2 id="createModalTitle">Crear perfil</h2>
                 <label for="newUsername">
                     Nombre de usuario
-                    <input id="newUsername" type="text" placeholder="ej. pepito"
-                        maxlength="24" required>
+                    <input id="newUsername" type="text" placeholder="ej. pepito" maxlength="24" required aria-describedby="usernameHint">
                 </label>
+                <span id="usernameHint" class="hint">Máximo 24 caracteres</span>
                 <label for="newPassword">
                     Contraseña
-                    <input id="newPassword" type="password" maxlength="32"
-                        placeholder="passw" required>
+                    <input id="newPassword" type="password" maxlength="32" placeholder="Contraseña" required aria-describedby="passwordHint">
                 </label>
+                <span id="passwordHint" class="hint">Máximo 32 caracteres</span>
                 <div class="modal-actions">
                     <button id="saveProfile" class="btn primary">Crear</button>
-                    <button id="cancelCreate"
-                        class="btn ghost">Cancelar</button>
+                    <button id="cancelCreate" class="btn ghost">Cancelar</button>
                 </div>
-                <p id="createError" class="error"></p>
+                <p id="createError" class="error" role="alert" aria-live="polite"></p>
             </div>
         </div>
-        <!--Modal para pedir contraseña de usuario-->
-        <div id="passwModal" class="modal invisible">
+
+        <!-- Modal para pedir contraseña de usuario -->
+        <div id="passwModal" class="modal invisible" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle">
             <div class="modal-card">
-                <h2>Iniciar sesión</h2>
-<<<<<<< Updated upstream
-                <label>
-=======
+                <h2 id="loginModalTitle">Iniciar sesión</h2>
                 <label for="loginPassword">
                     Contraseña
->>>>>>> Stashed changes
-                    <input id="loginPassword" type="password" maxlength="32"
-                        placeholder="Contraseña" required>
+                    <input id="loginPassword" type="password" maxlength="32" placeholder="Contraseña" required>
                 </label>
                 <div class="pass-actions">
                     <button id="loginBtn" class="btn primary">Entrar</button>
                     <button id="cancelLogin" class="btn ghost">Cancelar</button>
                 </div>
-                <p id="loginError" class="error"></p>
+                <p id="loginError" class="error" role="alert" aria-live="polite"></p>
             </div>
         </div>
     </body>
