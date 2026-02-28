@@ -1,13 +1,27 @@
 // ==========================
-// APAGAR (TRANSICIÓN)
+// APAGAR (TRANSICIÓN) - MEJORADO
 // ==========================
-document.querySelector('.taskbar-icon:last-child a').addEventListener('click', function (e) {
+const taskbarPower = document.getElementById('taskbarPower');
+
+taskbarPower.addEventListener('click', function (e) {
     e.preventDefault();
+    
+    // Feedback visual
+    taskbarPower.style.transform = 'scale(0.9)';
+    
     let shutdown = document.createElement('div');
     shutdown.className = 'shutdown-transition';
     shutdown.innerHTML = '<div class="shutdown-text">To be continued...</div>';
     document.body.appendChild(shutdown);
     setTimeout(() => location.href = 'index.html', 1400);
+});
+
+// Soporte para teclado
+taskbarPower.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        taskbarPower.click();
+    }
 });
 
 
@@ -47,9 +61,14 @@ showUser();
 
 
 // ==========================
-// ABRIR PARTES
+// ABRIR PARTES - MEJORADO PARA USABILIDAD
 // ==========================
 function abrirParte(parte) {
+    // Feedback visual antes de navegar
+    const botonActivo = document.querySelector('.desktop-icon.active');
+    if (botonActivo) botonActivo.classList.remove('active');
+    
+    // Navegar
     location.href = `partes.html?part=${encodeURIComponent(parte)}`;
 }
 
@@ -68,7 +87,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     Object.keys(iconos).forEach(id => {
         const el = document.getElementById(id);
-        if (el) el.addEventListener('click', () => abrirParte(iconos[id]));
+        if (el) {
+            // Click handler
+            el.addEventListener('click', () => abrirParte(iconos[id]));
+            
+            // Soporte para teclado (Enter)
+            el.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    abrirParte(iconos[id]);
+                }
+            });
+            
+            // Feedback visual al hacer click
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'scale(0.95)';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = '';
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = '';
+            });
+        }
     });
 });
 

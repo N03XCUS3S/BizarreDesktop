@@ -137,3 +137,118 @@ model-viewer.zoom-in {
     transition: none;
   }
 }
+
+/* ===== CLASE UTILITARIA PARA OCRULTAR ELEMENTOS VISUALMENTE ===== */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets grandes */
+@media (max-width: 1024px) {
+  model-viewer {
+    width: 100vw;
+    height: 80vh;
+    top: 40%;
+  }
+  
+  #pantallaHotspot {
+    width: 250px;
+    height: 160px;
+  }
+  
+  .glow {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  model-viewer {
+    width: 100vw;
+    height: 70vh;
+    top: 35%;
+  }
+  
+  #pantallaHotspot {
+    width: 200px;
+    height: 130px;
+  }
+  
+  .glow {
+    width: 300px;
+    height: 300px;
+    opacity: 0.4;
+  }
+  
+  #starsCanvas {
+    width: 100vw;
+    height: 70vh;
+  }
+  
+  .space-bg {
+    width: 100vw;
+    height: 70vh;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 480px) {
+  model-viewer {
+    width: 100vw;
+    height: 60vh;
+    top: 30%;
+  }
+  
+  #pantallaHotspot {
+    width: 160px;
+    height: 100px;
+  }
+  
+  .glow {
+    width: 250px;
+    height: 250px;
+    opacity: 0.35;
+  }
+  
+  body {
+    background: radial-gradient(ellipse at 50% 50%, #7a64b7 0%, #1a1a2e 50%, #070707 100%);
+  }
+  
+  #starsCanvas {
+    height: 60vh;
+  }
+  
+  .space-bg {
+    height: 60vh;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 320px) {
+  model-viewer {
+    width: 100vw;
+    height: 50vh;
+    top: 25%;
+  }
+  
+  #pantallaHotspot {
+    width: 140px;
+    height: 90px;
+  }
+  
+  .glow {
+    width: 200px;
+    height: 200px;
+  }
+}

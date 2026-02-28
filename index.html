@@ -1,40 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>JoJo's Desktop</title>
+        <title>JoJo's Desktop - Inicio</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="JoJo's Desktop - Una experiencia interactiva de escritorio inspirada en JoJo's Bizarre Adventure">
         <link rel="icon" href="assets/imgs/FavIcon.png" type="image/png">
         <link href="css/index.css" rel="stylesheet">
         <script src="js/index.js" defer></script>
         <script type="module"
             src="https://unpkg.com/@google/model-viewer@3.4.0/dist/model-viewer.min.js"></script>
-
     </head>
     <body>
-        <canvas id="starsCanvas"></canvas>
-        <div class="space-bg">
+        <!-- Skip link para accesibilidad -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+        
+        <!-- Canvas para estrellas (decorativo) -->
+        <canvas id="starsCanvas" aria-hidden="true"></canvas>
+        
+        <!-- Fondo espacial decorativo -->
+        <div class="space-bg" aria-hidden="true">
             <div class="glow"></div>
             <div class="stars"></div>
         </div>
-        <model-viewer id="laptop"
-            src="assets/models/laptop.glb"
-            camera-controls
-            exposure="1"
-            shadow-intensity="1"
-            environment-image="">
+        
+        <!-- Área principal con el modelo 3D -->
+        <main id="main-content" role="main" aria-label="Introducción interactiva">
+            <model-viewer 
+                id="laptop"
+                src="assets/models/laptop.glb"
+                camera-controls
+                exposure="1"
+                shadow-intensity="1"
+                environment-image=""
+                aria-label="Modelo 3D de portátil - Haz clic o presiona Enter para continuar">
 
-            <!-- Hotspot invisible centrado en la pantalla -->
-            <button
-                id="pantallaHotspot"
-                slot="hotspot-screen"
-                data-position="0.035 0.11 -0.1"
-                data-normal="0 0 1"
-                >
-            </button>
+                <!-- Botón para acceder al escritorio -->
+                <button
+                    id="pantallaHotspot"
+                    slot="hotspot-screen"
+                    data-position="0.035 0.11 -0.1"
+                    data-normal="0 0 1"
+                    aria-label="Haz clic para entrar al escritorio"
+                    title="Entrar al escritorio">
+                </button>
 
-        </model-viewer>
-        <div id="transition" class="transition"></div>
-
+            </model-viewer>
+        </main>
+        
+        <!-- Transición visual -->
+        <div id="transition" class="transition" aria-hidden="true"></div>
+        
+        <!-- Instrucciones para usuarios de tecnologías asistivas -->
+        <div class="visually-hidden" role="status" aria-live="polite">
+            Página de inicio de JoJo's Desktop. Presiona Enter o haz clic en el portátil para acceder al escritorio.
+        </div>
     </body>
 </html>

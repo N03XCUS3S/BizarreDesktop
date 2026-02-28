@@ -64,7 +64,7 @@
                 "eye_color": "Azul",
                 "hamon": true,
                 "user_images": [
-                    "https://static.jojowiki.com/images/thumb/9/9f/latest/20210507202834/Kakyoin_Infobox_Anime.png/400px-Kakyoin_Infobox_Anime.png"
+                    "https://static.wikia.nocookie.net/jjba/images/5/54/CaesarA.png/revision/latest/scale-to-width/360?cb=20250131153707"
                 ]
             },
             {
@@ -74,7 +74,37 @@
                 "eye_color": "Verde",
                 "hamon": true,
                 "user_images": [
-                    "https://static.jojowiki.com/images/thumb/9/9e/latest/20210314044358/Rohan_Kishibe_Infobox_Anime.png/400px-Rohan_Kishibe_Infobox_Anime.png"
+                    "https://static.wikia.nocookie.net/p__/images/a/af/Lisa_Lisa_Anime.png/revision/latest?cb=20240624154806&path-prefix=protagonist"
+                ]
+            },
+            {
+                "user": "Rudol von Stroheim",
+                "gender": "Masculino",
+                "hair_color": "Rubio",
+                "eye_color": "Azul (Ojo derecho mecánico)",
+                "hamon": false,
+                "user_images": [
+                    "https://static.wikia.nocookie.net/jjba/images/8/84/Cyborg-Strohiem_Anime_DVD12.png/revision/latest/scale-to-width-down/270?cb=20241113143553 "
+                ]
+            },
+            {
+                "user": "Robert E. O. Speedwagon",
+                "gender": "Masculino",
+                "hair_color": "Gris/Blanco",
+                "eye_color": "Marrón",
+                "hamon": false,
+                "user_images": [
+                    "https://i.namu.wiki/i/C3YjYfVsfyGQSDRseFKodTcP3FV_oWp6WutviEttnn7bU_czs5yIcVTHDAPfHvMPFNuj0l3h4WQZKfxQ14atUg.webp"
+                ]
+            },
+            {
+                "user": "Suzi Q",
+                "gender": "Femenino",
+                "hair_color": "Rubio",
+                "eye_color": "Azul",
+                "hamon": false,
+                "user_images": [
+                    "https://images.shoutwiki.com/jojoss/7/72/Unit_Suzi_Q_%28Commemorative%29.png "
                 ]
             },
             {
@@ -84,7 +114,37 @@
                 "eye_color": "Rojo",
                 "hamon": false,
                 "user_images": [
-                    "https://static.jojowiki.com/images/thumb/3/3a/latest/20210430072039/Jotaro_SC_Infobox_Anime.png/400px-Jotaro_SC_Infobox_Anime.png"
+                    "https://static.wikia.nocookie.net/ficcion-sin-limites/images/6/68/Kars_Appearance.png/revision/latest?cb=20230520011128&path-prefix=es"
+                ]
+            },
+            {
+                "user": "Esidisi",
+                "gender": "Masculino",
+                "hair_color": "Blanco",
+                "eye_color": "Amarillo/Dorado",
+                "hamon": false,
+                "user_images": [
+                    "https://static.wikia.nocookie.net/villains/images/7/76/EsidisiRender.png/revision/latest?cb=20250415145835"
+                ]
+            },
+            {
+                "user": "Wamuu",
+                "gender": "Masculino",
+                "hair_color": "Rubio",
+                "eye_color": "Dorado/Verde (según la luz)",
+                "hamon": false,
+                "user_images": [
+                    "https://static.wikia.nocookie.net/villains/images/6/6f/WamuuRender.png/revision/latest?cb=20250415142634"
+                ]
+            },
+            {
+                "user": "Santana",
+                "gender": "Masculino",
+                "hair_color": "Pelirrojo",
+                "eye_color": "Rojo",
+                "hamon": false,
+                "user_images": [
+                    "https://static.wikia.nocookie.net/vsbattles/images/5/54/SantanaOraDora.png/revision/latest?cb=20260214081112"
                 ]
             }
         ]

@@ -245,6 +245,34 @@ body {
   }
 }
 
+/* ===== CLASE UTILITARIA PARA OCRULTAR ELEMENTOS VISUALMENTE ===== */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Estilo para perfiles cuando se enfocan */
+.profile:focus {
+  outline: 3px solid var(--focus-outline);
+  outline-offset: 2px;
+  transform: translateY(-6px);
+  box-shadow: 0 18px 34px rgba(2, 6, 23, 0.6);
+}
+
+/* Mejorar foco en botones del modal */
+.modal .btn:focus {
+  outline: 3px solid var(--focus-outline);
+  outline-offset: 2px;
+  box-shadow: 0 0 15px var(--focus-outline);
+}
+
 /* Modal buttons */
 .modal .btn {
   width: 100px;
@@ -322,4 +350,235 @@ body {
   display: flex;
   justify-content: space-evenly;
   margin-top: 15px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets grandes */
+@media (max-width: 1024px) {
+  .ls-header h1 {
+    font-size: 3.5rem;
+  }
+  
+  .profiles {
+    min-height: 180px;
+  }
+  
+  .profile {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    font-size: 18px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .login-screen {
+    padding: 20px;
+  }
+  
+  .ls-header h1 {
+    font-size: 2.8rem;
+  }
+  
+  .ls-header p {
+    font-size: 1rem;
+  }
+  
+  .profiles {
+    flex-direction: column;
+    min-height: 200px;
+    gap: 15px;
+  }
+  
+  .profiles-list {
+    gap: 12px;
+  }
+  
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .profile {
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+  }
+  
+  .avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 16px;
+  }
+  
+  .controls {
+    width: 100%;
+    max-width: 320px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .btn {
+    width: 100%;
+    height: 48px;
+  }
+  
+  .modal-card {
+    width: 90%;
+    max-width: 340px;
+    padding: 15px;
+  }
+  
+  .modal-card h2 {
+    font-size: 1.4rem;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+  
+  .modal .btn {
+    width: 100%;
+  }
+  
+  .pass-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .pass-actions .btn {
+    width: 100%;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 480px) {
+  .login-screen {
+    padding: 16px;
+  }
+  
+  .ls-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .ls-header p {
+    font-size: 0.9rem;
+  }
+  
+  .profiles {
+    padding: 12px;
+    min-height: 160px;
+  }
+  
+  .profiles-list {
+    gap: 8px;
+  }
+  
+  .nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  
+  .nav-btn.left {
+    margin-right: 5px;
+  }
+  
+  .nav-btn.right {
+    margin-left: 5px;
+  }
+  
+  .profile {
+    width: 100px;
+    height: 100px;
+    padding: 8px;
+  }
+  
+  .avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .profile span {
+    font-size: 0.7rem;
+  }
+  
+  .controls {
+    gap: 8px;
+  }
+  
+  .btn {
+    font-size: 0.9rem;
+    height: 44px;
+  }
+  
+  .btn.ghost {
+    justify-content: center;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  .btn.ghost img {
+    display: none;
+  }
+  
+  .modal-card {
+    width: 95%;
+    max-width: 300px;
+    padding: 12px;
+  }
+  
+  .modal-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  
+  .modal-card label {
+    font-size: 0.85rem;
+    margin: 6px 0;
+  }
+  
+  .modal-card input {
+    padding: 8px;
+  }
+  
+  .hint {
+    font-size: 0.75rem;
+  }
+  
+  .error {
+    font-size: 0.8rem;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 320px) {
+  .ls-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .profile {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 12px;
+  }
+  
+  .btn {
+    font-size: 0.85rem;
+    height: 40px;
+  }
 }

@@ -9,46 +9,176 @@
         <script src="js/partes.js" defer></script>
     </head>
     <body>
+        <!-- Fondo animado con partículas -->
+        <canvas id="particlesCanvas"></canvas>
+        
+        <!-- Skip link para accesibilidad -->
         <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-        <header id="header">
-            <h1 id="page-title"></h1>
-            <nav aria-label="Navegación principal">
-                <a href="escritorio.html">Volver al escritorio</a>
-            </nav>
+        
+        <!-- Banner parallax -->
+        <header class="banner" id="banner">
+            <div class="banner-overlay"></div>
+            <h1 id="page-title" class="banner-title">Cargando...</h1>
+            <div class="banner-scroll-indicator">
+                <span>↓</span>
+            </div>
         </header>
-        <main id="main-content">
-            <div class="part" role="banner" aria-label="Banner de la parte">
-            </div>
-            <div class="principal">
-                <div class="info">
-                    <h2>Resumen</h2>
-                    <p></p>
+        
+        <div class="container">
+            <!-- Sidebar mejorado -->
+            <aside class="sidebar" aria-label="Navegación de la página">
+                <div class="sidebar-header">
+                    <img src="assets/imgs/FavIcon.png" alt="JoJo's Desktop" class="sidebar-logo">
+                    <span class="sidebar-title">Navegación</span>
                 </div>
-                <div class="characters" id="characters-section">
-                    <h2>Personajes</h2>
-                    <div id="characters-list" role="list" aria-label="Lista de personajes"></div>
-                </div>
-                <div class="mapas" id="mapas">
-                    <h2>Localizaciones</h2>
-                    <img id="mapa-imagen" alt="Mapa de la parte">
-                </div>
-                <div class="manga" id="manga">
-                    <h2>Manga</h2>
-                    <img id="manga-imagen" alt="Portada del manga">
-                </div>
-            </div>
-            <aside aria-label="Navegación de la página">
-                <nav>
-                    <a href="escritorio.html">Escritorio</a>
-                    <a href="#res">Resumen</a>
-                    <a href="#characters-section">Personajes</a>
-                    <a href="#mapas">Localizaciones</a>
-                    <a href="#manga">Manga</a>
+                <nav class="sidebar-nav">
+                    <a href="escritorio.html" class="sidebar-link">
+                        <span class="sidebar-icon">🏠</span>
+                        <span>Escritorio</span>
+                    </a>
+                    <a href="#resumen" class="sidebar-link active" data-tab="resumen">
+                        <span class="sidebar-icon">📖</span>
+                        <span>Resumen</span>
+                    </a>
+                    <a href="#personajes" class="sidebar-link" data-tab="personajes">
+                        <span class="sidebar-icon">👥</span>
+                        <span>Personajes</span>
+                    </a>
+                    <a href="#localizaciones" class="sidebar-link" data-tab="localizaciones">
+                        <span class="sidebar-icon">🗺️</span>
+                        <span>Lugares</span>
+                    </a>
+                    <a href="#manga" class="sidebar-link" data-tab="manga">
+                        <span class="sidebar-icon">📚</span>
+                        <span>Manga</span>
+                    </a>
                 </nav>
+                <div class="sidebar-footer">
+                    <p>© 2026 Bizarre Desktop</p>
+                </div>
             </aside>
-        </main>
-        <footer id="foot" aria-label="Pie de página">
-            <p>© 2024 JoJo's Desktop</p>
-        </footer>
+            
+            <!-- Contenido principal -->
+            <main id="main-content">
+                <!-- Sistema de pestañas -->
+                <div class="tabs-container">
+                    <nav class="tabs" role="tablist" aria-label="Secciones">
+                        <button class="tab active" data-tab="resumen" role="tab" aria-selected="true" aria-controls="panel-resumen">
+                            📖 Resumen
+                        </button>
+                        <button class="tab" data-tab="personajes" role="tab" aria-selected="false" aria-controls="panel-personajes">
+                            👥 Personajes
+                        </button>
+                        <button class="tab" data-tab="localizaciones" role="tab" aria-selected="false" aria-controls="panel-localizaciones">
+                            🗺️ Lugares
+                        </button>
+                        <button class="tab" data-tab="manga" role="tab" aria-selected="false" aria-controls="panel-manga">
+                            📚 Manga
+                        </button>
+                    </nav>
+                    
+                    <!-- Panel: Resumen -->
+                    <section id="panel-resumen" class="tab-panel active" role="tabpanel" aria-labelledby="tab-resumen">
+                        <div class="info-card">
+                            <h2 class="section-title">📖 Resumen</h2>
+                            <div class="info-content">
+                                <p id="resumen-text" class="info-text"></p>
+                            </div>
+                            <div class="info-meta">
+                                <span class="meta-item">
+                                    <span class="meta-icon">📅</span>
+                                    <span id="año-text">1990</span>
+                                </span>
+                                <span class="meta-item">
+                                    <span class="meta-icon">📖</span>
+                                    <span id="capitulos-text">0 capítulos</span>
+                                </span>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Panel: Personajes -->
+                    <section id="panel-personajes" class="tab-panel" role="tabpanel" aria-labelledby="tab-personajes">
+                        <div class="characters-section">
+                            <h2 class="section-title">👥 Personajes</h2>
+                            <div id="characters-list" class="characters-grid" role="list">
+                                <!-- Los personajes se cargan dinámicamente -->
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Panel: Localizaciones -->
+                    <section id="panel-localizaciones" class="tab-panel" role="tabpanel" aria-labelledby="tab-localizaciones">
+                        <div class="locations-section">
+                            <h2 class="section-title">🗺️ Localizaciones</h2>
+                            <div class="location-card">
+                                <img id="mapa-imagen" alt="Mapa de la ubicación" class="location-image clickable" tabindex="0" role="button" aria-label="Haz clic para ver el mapa en grande">
+                                <div class="location-info">
+                                    <h3>Mapa</h3>
+                                    <p>Explora los lugares donde se desarrolla esta parte de JoJo's Bizarre Adventure</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Panel: Manga -->
+                    <section id="panel-manga" class="tab-panel" role="tabpanel" aria-labelledby="tab-manga">
+                        <div class="manga-section">
+                            <h2 class="section-title">📚 Manga</h2>
+                            <div class="manga-card">
+                                <img id="manga-imagen" alt="Portada del manga" class="manga-cover clickable" tabindex="0" role="button" aria-label="Haz clic para ver la portada en grande">
+                                <div class="manga-info">
+                                    <h3>Volúmenes del manga</h3>
+                                    <p>Colección de volúmenes tanksōbon de esta parte</p>
+                                    <a href="#" class="manga-link">Ver colección completa →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+        
+        <!-- Modal para el mapa -->
+        <div id="map-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="map-modal-title" hidden>
+            <div class="modal-backdrop"></div>
+            <div class="modal-content map-modal-content">
+                <button class="modal-close" aria-label="Cerrar mapa">&times;</button>
+                <div class="map-modal-body">
+                    <img id="map-modal-image" alt="Mapa en grande" class="map-modal-image">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal para la portada del manga -->
+        <div id="manga-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="manga-modal-title" hidden>
+            <div class="modal-backdrop"></div>
+            <div class="modal-content map-modal-content">
+                <button class="modal-close" aria-label="Cerrar imagen">&times;</button>
+                <div class="map-modal-body">
+                    <img id="manga-modal-image" alt="Portada del manga en grande" class="map-modal-image">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal para detalles del personaje -->
+        <div id="character-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+            <div class="modal-backdrop"></div>
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+                <div class="modal-body">
+                    <div class="modal-image-container">
+                        <img id="modal-character-image" alt="" class="modal-character-image">
+                    </div>
+                    <div class="modal-info">
+                        <h2 id="modal-title" class="modal-title"></h2>
+                        <p id="modal-character-name" class="modal-subtitle"></p>
+                        <div id="modal-details" class="modal-details">
+                            <!-- Los detalles se generan dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
