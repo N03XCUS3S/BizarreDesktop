@@ -112,7 +112,9 @@
                         <div class="locations-section">
                             <h2 class="section-title">🗺️ Localizaciones</h2>
                             <div class="location-card">
-                                <img id="mapa-imagen" alt="Mapa de la ubicación" class="location-image clickable" tabindex="0" role="button" aria-label="Haz clic para ver el mapa en grande">
+                                <div class="image-scroll-container">
+                                    <img id="mapa-imagen" alt="Mapa de la ubicación" class="location-image clickable" tabindex="0" role="button" aria-label="Haz clic para ver el mapa en grande">
+                                </div>
                                 <div class="location-info">
                                     <h3>Mapa</h3>
                                     <p>Explora los lugares donde se desarrolla esta parte de JoJo's Bizarre Adventure</p>
@@ -126,11 +128,13 @@
                         <div class="manga-section">
                             <h2 class="section-title">📚 Manga</h2>
                             <div class="manga-card">
-                                <img id="manga-imagen" alt="Portada del manga" class="manga-cover clickable" tabindex="0" role="button" aria-label="Haz clic para ver la portada en grande">
+                                <div class="image-scroll-container">
+                                    <img id="manga-imagen" alt="Portada del manga" class="manga-cover clickable" tabindex="0" role="button" aria-label="Haz clic para ver la portada en grande">
+                                </div>
                                 <div class="manga-info">
                                     <h3>Volúmenes del manga</h3>
                                     <p>Colección de volúmenes tanksōbon de esta parte</p>
-                                    <a href="#" class="manga-link">Ver colección completa →</a>
+                                    <a href="coleccion.html" class="manga-link">Ver colección completa →</a>
                                 </div>
                             </div>
                         </div>
@@ -169,6 +173,7 @@
                 <div class="modal-body">
                     <div class="modal-image-container">
                         <img id="modal-character-image" alt="" class="modal-character-image">
+                        <div class="modal-stand-container"></div>
                     </div>
                     <div class="modal-info">
                         <h2 id="modal-title" class="modal-title"></h2>

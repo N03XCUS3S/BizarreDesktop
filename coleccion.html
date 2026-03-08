@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Colección Completa - JoJo's Desktop</title>
+        <link rel="icon" href="assets/imgs/FavIcon.png" type="image/png">
+        <link rel="stylesheet" href="css/coleccion.css">
+        <script src="js/coleccion.js" defer></script>
+    </head>
+    <body>
+        <!-- Fondo con partículas -->
+        <canvas id="particlesCanvas"></canvas>
+        
+        <!-- Botón fijo para volver al escritorio -->
+        <a href="escritorio.html" class="fixed-home-button" aria-label="Volver al escritorio">
+            <span class="home-icon">🏠</span>
+            <span class="home-text">Escritorio</span>
+        </a>
+        
+        <!-- Skip link para accesibilidad -->
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+        
+        <!-- Header -->
+        <header class="collection-header">
+            <div class="header-content">
+                <h1 class="collection-title">Colección Completa</h1>
+                <p class="collection-subtitle">
+                    Explora todas las partes de JoJo's Bizarre Adventure, desde Phantom Blood hasta The JoJoLands
+                </p>
+            </div>
+        </header>
+        
+        <!-- Contenido principal -->
+        <main id="main-content" class="collection-container">
+            <!-- Barra de estadísticas -->
+            <div class="stats-bar" role="region" aria-label="Estadísticas de la colección">
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-parts">9</span>
+                    <span class="stat-label">Partes</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-volumes">0</span>
+                    <span class="stat-label">Volúmenes</span>
+                </div>
+            </div>
+            
+            <!-- Grid de colección -->
+            <div class="collection-grid" id="collection-grid" role="list" aria-label="Colección de partes de JoJo's Bizarre Adventure">
+                <!-- Las tarjetas se generan dinámicamente con JavaScript -->
+            </div>
+        </main>
+        
+        <!-- Modal de detalles -->
+        <div id="collection-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+            <div class="modal-backdrop"></div>
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+                <div class="modal-body">
+                    <!-- Imagen a la izquierda -->
+                    <div class="modal-image-container">
+                        <img id="modal-image" alt="" class="modal-image">
+                    </div>
+                    <!-- Información a la derecha -->
+                    <div class="modal-info">
+                        <div class="modal-header">
+                            <p class="modal-part-number">Volumen</p>
+                            <h2 id="modal-title" class="modal-title"></h2>
+                        </div>
+                        <p id="modal-summary" class="modal-summary"></p>
+                        <div id="modal-details" class="modal-details-grid">
+                            <!-- Los detalles se generan dinámicamente -->
+                        </div>
+                        <div id="modal-actions" class="modal-actions">
+                            <!-- Los botones se generan dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

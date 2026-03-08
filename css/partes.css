@@ -278,7 +278,41 @@ body {
     flex: 1;
     padding: 40px;
     max-width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+}
+
+/* Contenedor con scroll horizontal para imágenes grandes */
+.image-scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--glass);
+}
+
+.image-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.image-scroll-container::-webkit-scrollbar-track {
+    background: var(--glass);
+    border-radius: 4px;
+}
+
+.image-scroll-container::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+.image-scroll-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* ===== TABS ===== */
@@ -476,7 +510,7 @@ body {
     border-color: var(--accent);
 }
 
-/* ===== CONTENEDOR DE IMAGEN - ARREGLADO ===== */
+/* ===== CONTENEDOR DE IMAGEN ===== */
 .character-image-container {
     width: 160px;
     height: 160px;
@@ -497,7 +531,7 @@ body {
     box-shadow: 0 0 50px rgba(233, 30, 99, 0.8);
 }
 
-/* IMAGEN COMPLETA - ARREGLADO */
+/* IMAGEN DEL PERSONAJE EN TARJETA */
 .character-image-container img {
     width: 100%;
     height: 100%;
@@ -668,7 +702,7 @@ body {
     gap: 15px;
 }
 
-/* ===== MODAL MEJORADO ===== */
+/* ===== MODAL ===== */
 .modal {
     position: fixed;
     top: 0;
@@ -741,7 +775,7 @@ body {
     transform: rotate(90deg);
 }
 
-/* Layout del modal: imagen a la izquierda, info a la derecha */
+/* ===== MODAL BODY - LAYOUT FLEXIBLE ===== */
 .modal-body {
     display: flex;
     flex-direction: row;
@@ -749,24 +783,56 @@ body {
     overflow: hidden;
 }
 
+/* Contenedor de imagen del modal */
 .modal-image-container {
     width: 45%;
-    min-width: 300px;
+    min-width: 200px;
     height: auto;
     max-height: 90vh;
     overflow: hidden;
     background: rgba(0, 0, 0, 0.3);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px;
+    padding: 20px;
+    gap: 15px;
 }
 
+/* IMAGEN DEL PERSONAJE - RESPONSIVE Y FLEXIBLE */
 .modal-character-image {
     width: 100%;
-    height: 100%;
-    max-height: 500px;
+    height: auto;
+    max-height: 350px;
     object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+/* Imagen del Stand en el modal */
+.modal-stand-container {
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid var(--glass-border);
+    overflow: hidden;
+}
+
+.modal-stand-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.modal-stand-image {
+    width: 80%;
+    max-width: 200px;
+    max-height: 120px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(233, 30, 99, 0.3);
 }
 
 .modal-info {
@@ -893,7 +959,7 @@ body {
         padding: 20px;
     }
     
-    /* Modal responsive */
+    /* Modal responsive - cambia a columna */
     .modal-body {
         flex-direction: column;
     }
@@ -901,13 +967,21 @@ body {
     .modal-image-container {
         width: 100%;
         min-width: 100%;
-        height: 250px;
-        padding: 20px;
+        height: 280px;
+        padding: 15px;
+    }
+    
+    .modal-character-image {
+        max-height: 200px;
+    }
+    
+    .modal-stand-image {
+        max-height: 80px;
     }
     
     .modal-info {
         width: 100%;
-        padding: 25px;
+        padding: 20px;
     }
 }
 
@@ -951,6 +1025,34 @@ body {
     .modal-title {
         font-size: 1.8rem;
     }
+    
+    .modal-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    /* Modal más pequeño */
+    .modal-image-container {
+        height: 240px;
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .modal-character-image {
+        max-height: 150px;
+    }
+    
+    .modal-stand-container {
+        padding-top: 10px;
+    }
+    
+    .modal-stand-label {
+        font-size: 0.7rem;
+        margin-bottom: 5px;
+    }
+    
+    .modal-stand-image {
+        max-height: 60px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -983,15 +1085,48 @@ body {
     
     .modal-content {
         width: 95%;
-        max-height: 85vh;
+        max-height: 90vh;
     }
     
+    .modal-body {
+        max-height: 90vh;
+    }
+    
+    /* Modal muy pequeño */
     .modal-image-container {
         height: 200px;
+        padding: 10px;
+        gap: 8px;
+    }
+    
+    .modal-character-image {
+        max-height: 120px;
+    }
+    
+    .modal-stand-container {
+        padding-top: 8px;
+    }
+    
+    .modal-stand-label {
+        font-size: 0.65rem;
+        margin-bottom: 4px;
+    }
+    
+    .modal-stand-image {
+        max-height: 50px;
+        max-width: 120px;
+    }
+    
+    .modal-info {
+        padding: 15px;
     }
     
     .modal-title {
         font-size: 1.5rem;
+    }
+    
+    .modal-detail {
+        padding: 12px 15px;
     }
 }
 
@@ -1035,3 +1170,4 @@ body {
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
+

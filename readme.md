@@ -1,6 +1,6 @@
 # Bizarre Desktop
 
-Bizarre Desktop es una wiki interactiva de personajes y elementos de **JoJo's Bizarre Adventure** presentada como un escritorio de ordenador retro. Simula la experiencia de navegar por un sistema operativo de los años 90 mientras exploras el universo de JoJo.
+Bizarre Desktop es una wiki interactiva de personajes y elementos de **JoJo's Bizarre Adventure** presentada como un escritorio de ordenador retro. Simula la experiencia de navegar por un sistema operativo mientras exploras el universo de JoJo.
 
 ## Descripción
 
@@ -8,8 +8,8 @@ Este proyecto ofrece acceso a información completa sobre las partes de JoJo's B
 
 ### Características
 
-- 📚 **Wiki completa**: Información sobre todas las partes del manga/anime
-- 👤 **Base de datos de personajes**: Personajes con detalles como color de cabello, ojos y habilidades Hamon
+- 📚 **Wiki**: Información sobre todas las partes del manga/anime
+-  **Base de datos de personajes**: Personajes con detalles como color de cabello, ojos y habilidades Hamon
 - ⚡ **Stands**: Catálogo de todos los Stands con sus tipos y usuarios
 - 🖥️ **Interfaz de escritorio**: Simulación de un sistema operativo retro
 - 🎮 **Modelo 3D interactivo**: Portátil 3D en la página de inicio
@@ -51,17 +51,46 @@ bash
 
 ## Estructura del Proyecto
 
+## Estructura del Proyecto
 ```
 DesktopWeb/
 ├── index.html          # Página de inicio con modelo 3D
 ├── escritorio.html     # Escritorio principal
 ├── partes.html         # Visor de partes y personajes
-├── sesion.html         # Página de sesión
-├── css/                # Estilos
-├── js/                 # Scripts
-├── data/               # Base de datos JSON
-└── assets/             # Imágenes, modelos 3D y fuentes
+├── sesion.html        # Página de sesión
+├── coleccion.html      # Colección completa de volúmenes de manga
+├── css/               # Estilos
+│   ├── index.css
+│   ├── escritorio.css
+│   ├── partes.css
+│   ├── sesion.css
+│   └── coleccion.css
+├── js/                # Scripts
+│   ├── index.js
+│   ├── escritorio.js
+│   ├── partes.js
+│   ├── sesion.js
+│   └── coleccion.js
+
+│   └── data.json
+└── assets/            # Imágenes, modelos 3D y fuentes
 ```
+
+## Colección de Manga
+
+El proyecto incluye una **colección completa de 138 volúmenes** de manga de JoJo's Bizarre Adventure:
+
+| Parte | Volúmenes |
+|-------|-----------|
+| Phantom Blood | 5 |
+| Stardust Crusaders | 16 |
+| Diamond is Unbreakable | 18 |
+| Vento Aureo | 17 |
+| Stone Ocean | 17 |
+| Steel Ball Run | 24 |
+| JoJolion | 24 |
+| The JoJoLands | 10+ |
+
 
 ## Uso
 

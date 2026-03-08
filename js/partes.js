@@ -143,6 +143,20 @@ function initCharacterModal() {
         modalImg.src = characterData.image || characterData.user_images?.[0] || characterData.stand_images?.[0] || 'assets/imgs/UserIcon.png';
         modalImg.alt = characterData.name || characterData.user || '';
 
+        // Mostrar imagen del Stand si existe
+        const standContainer = document.querySelector('.modal-stand-container');
+        if (standContainer) {
+            if (characterData.stand && characterData.stand_images && characterData.stand_images.length > 0) {
+                standContainer.innerHTML = `
+                    <div class="modal-stand-label">Stand</div>
+                    <img class="modal-stand-image" src="${characterData.stand_images[0]}" alt="${characterData.stand}">
+                `;
+                standContainer.style.display = 'block';
+            } else {
+                standContainer.style.display = 'none';
+            }
+        }
+
         // Construir los detalles dinámicamente - MOSTRAR TODO
         const modalDetails = document.getElementById('modal-details');
         let detailsHTML = '';
@@ -519,6 +533,8 @@ function generarContenidoParte(parte, datos) {
         "The JoJoLands": "https://static.jojowiki.com/images/thumb/c/c0/latest/20231219044452/Hawaii_Map.png/1000px-Hawaii_Map.png"
     };
     
+    // Buscar el contenedor de scroll o crear uno
+    let mapaContainer = document.getElementById('mapa-imagen')?.parentElement;
     const mapaImg = document.getElementById('mapa-imagen');
     if (mapaImg) {
         mapaImg.src = mapasPartes[parte] || "assets/imgs/jojosBanner.jpg";
@@ -657,6 +673,7 @@ function generarContenidoParte(parte, datos) {
                             eye_color: item.eye_color,
                             hamon: item.hamon,
                             image: item.user_images?.[0] || item.images?.[0],
+                            stand_images: item.stand_images,
                             description: item.description || item.summary
                         });
                     }
@@ -685,6 +702,7 @@ function generarContenidoParte(parte, datos) {
                                 eye_color: item.eye_color,
                                 hamon: item.hamon,
                                 image: item.user_images?.[0] || item.images?.[0],
+                                stand_images: item.stand_images,
                                 description: item.description || item.summary
                             });
                         }

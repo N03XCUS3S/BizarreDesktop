@@ -432,6 +432,7 @@ background: conic-gradient(from 0deg, hsl(0, 0%, 0%) 0%, #4d0c72 10%, #000 20%, 
 | `escritorio.css` | Interfaz de escritorio principal |
 | `partes.css` | Wiki de partes y personajes |
 | `sesion.css` | Pantalla de seleccion de perfil |
+| `coleccion.css` | Colección completa de volúmenes de manga |
 
 ---
 
